@@ -1,0 +1,489 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Сервис: кабинет заказов для дилеров и постоянных клиентов — GMM Digital</title>
+<meta name="description" content="Дилер, прораб или магазин заказывает за минуту по своему прайсу — заказ приходит менеджеру в Telegram с кнопками. История, повтор заказа, статус отгрузки, остатки и долг. Вместо тетради и голосовых в WhatsApp.">
+<link rel="canonical" href="https://gmm-digital.ru/servis">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Сервис: кабинет заказов для дилеров и постоянных клиентов — GMM Digital">
+<meta property="og:description" content="Дилер, прораб или магазин заказывает за минуту по своему прайсу — заказ приходит менеджеру в Telegram с кнопками. История, повтор заказа, статус отгрузки, остатки и долг. Вместо тетради и голосовых в WhatsApp.">
+<meta property="og:image" content="https://gmm-digital.ru/img/og.jpg">
+<meta property="og:url" content="https://gmm-digital.ru/servis">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts/onest.css"><link rel="stylesheet" href="/fonts/inter.css">
+<link rel="icon" href="/img/favicon.png" type="image/png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+:root{
+  --bg:#f3f6f6; --surface:#ffffff; --surface-2:#e3eaeb;
+  --ink:#18262a; --muted:#5b6b70; --line:#d3dcde;
+  --green:#8a5a2b; --green-soft:#f3e7d9; --green-ink:#5e3c18;
+  --gold:#c9a55a; --gold-soft:#f5ecd6;
+  --red:#b7442e; --red-soft:#f5e3de;
+  --tg:#2aabee;
+  --tent:#0f2c32; --tent-gold:#d9b56a;
+  --shadow:0 10px 30px rgba(27,34,48,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0f1719; --surface:#162022; --surface-2:#1f2b2e;
+    --ink:#e6ecee; --muted:#96a6ab; --line:#2a383c;
+    --green:#d8a56a; --green-soft:#33261a; --green-ink:#f0d6b4;
+    --gold:#d9b56a; --gold-soft:#3a3016;
+    --red:#e2705a; --red-soft:#3d221c;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{--bg:#0f1719; --surface:#162022; --surface-2:#1f2b2e;
+    --ink:#e6ecee; --muted:#96a6ab; --line:#2a383c;
+    --green:#d8a56a; --green-soft:#33261a; --green-ink:#f0d6b4;
+    --gold:#d9b56a; --gold-soft:#3a3016;
+    --red:#e2705a; --red-soft:#3d221c;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding-block:28px 64px;padding-inline:20px}
+h1,h2,h3{font-family:Onest,system-ui,sans-serif;line-height:1.15;margin:0;text-wrap:balance;font-weight:700;letter-spacing:0}
+h1{font-size:clamp(30px,7vw,42px);letter-spacing:-.01em}
+h2{font-size:clamp(24px,5.4vw,30px)}
+h3{font-size:19px;font-weight:600}
+p{margin:0}
+.eyebrow{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.section{display:grid;gap:16px;margin-top:52px}
+.lead{font-size:19px;color:var(--ink)}
+.muted{color:var(--muted)}
+.hi{color:var(--green)}
+.hero{display:grid;gap:18px;padding-top:8px}
+.hero .sub{font-size:19px;color:var(--muted);max-width:32ch}
+
+/* Пример из 2ГИС */
+.review{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:8px;font-size:15.5px;box-shadow:var(--shadow)}
+.review .who{display:flex;gap:10px;align-items:center}
+.review .ava{width:34px;height:34px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;font-weight:600;color:var(--muted);font-size:14px}
+.review .stars{color:var(--gold);letter-spacing:2px;font-size:14px}
+.review .t{color:var(--ink)}
+.review .when{font-size:13px;color:var(--muted)}
+
+/* Телефон */
+.device{display:grid;gap:14px;justify-items:center}
+.device .cap{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600;text-align:center}
+.dev{width:min(270px,100%);background:#0a0a0a;border-radius:40px;padding:9px;box-shadow:var(--shadow),0 0 0 1px rgba(255,255,255,.08) inset}
+.dev-in{border-radius:32px;overflow:hidden;background:#000;display:grid;min-height:540px}
+.dev-bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:10px 22px 0;color:#fff;font-size:12.5px;font-weight:600}
+.dev-bar .isl{width:78px;height:22px;background:#000;border-radius:20px}
+.dev-bar .bat{justify-self:end;display:flex;align-items:center;gap:5px}
+.dev-bar .bat i{display:block;width:20px;height:10px;border:1.5px solid rgba(255,255,255,.7);border-radius:3px;position:relative}
+.dev-bar .bat i::after{content:"";position:absolute;inset:2px;right:4px;background:#fff;border-radius:1px}
+/* Экран оценки — как у гостя */
+.rate{background:radial-gradient(60% 40% at 50% 0%,rgba(201,165,90,.14),transparent 70%),#0e0d0b;color:#f3ede0;text-align:center;padding:0 16px 40px;display:flex;flex-direction:column;justify-content:center}
+.rate .dev-bar{position:absolute;left:0;right:0;top:0}
+.rate{position:relative}
+.rate .dev-bar{padding-inline:14px}
+.rate .rb{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#c9a55a;margin:26px 0 6px}
+.rate .rn{font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
+.rate .rs{color:#a39b88;font-size:13px;margin:4px 0 28px}
+.rate .ra{font-size:18px;font-weight:600;margin-bottom:14px}
+.rate .rstars{display:flex;justify-content:center;gap:4px}
+.rate .rstars svg{width:42px;height:42px;fill:none;stroke:#c9a55a;stroke-width:1.4}
+.rate .rh{color:#a39b88;font-size:12px;margin-top:10px}
+/* Экран Telegram — как у хозяина */
+.tgs{background:#0e1621;color:#f2f5f8;font-size:13px;line-height:1.4;text-align:left;display:grid;grid-template-rows:auto auto 1fr auto auto}
+.tgs .dev-bar{background:#17212b;padding-bottom:6px}
+.tg-head{display:flex;align-items:center;gap:10px;padding:4px 12px 10px;background:#17212b}
+.tg-head .back{color:#5eb5f7;font-size:24px;line-height:1;margin-top:-3px}
+.tg-head .av{width:34px;height:34px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#0a2233}.tg-head .av svg{width:34px;height:34px;display:block}
+.tg-head .nm{font-weight:600;font-size:14.5px;line-height:1.15}
+.tg-head .st{font-size:11.5px;color:#8b9aa8}
+.tg-body{padding:10px 10px 12px;display:grid;gap:8px;align-content:start;justify-items:start;background:#0e1621}
+.tg-day{justify-self:center;background:rgba(0,0,0,.35);color:#c5d0da;font-size:11px;padding:3px 9px;border-radius:999px}
+.tg-msg{background:#182533;border-radius:12px 12px 12px 3px;padding:6px 10px 5px;max-width:100%;white-space:pre-line;font-size:12.5px}
+.tg-msg b{font-weight:600}
+.tg-msg .tm{display:block;text-align:right;font-size:10.5px;color:#6d8199;margin-top:2px}
+.tg-input{display:flex;align-items:center;gap:10px;padding:7px 12px;background:#17212b;color:#6d8199;font-size:13px}
+.tg-input .pin{width:18px;height:18px;border:2px solid #6d8199;border-radius:6px;transform:rotate(45deg);opacity:.7}
+.tg-input .box{flex:1;background:#242f3d;border-radius:14px;padding:6px 12px}
+.tg-kb{background:#17212b;padding:2px 6px 10px;display:grid;gap:5px}
+.tg-kb div{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.tg-kb span{background:#2b3a4a;border-radius:8px;padding:9px 4px;text-align:center;font-size:12.5px;color:#fff;white-space:nowrap}
+
+/* Развилка */
+.fork{display:grid;gap:14px}
+.phone{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 18px 20px;display:grid;gap:10px;box-shadow:var(--shadow);justify-items:center;text-align:center}
+.phone .cap{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.phone .q{font-family:Onest,system-ui,sans-serif;font-size:22px;font-weight:700}
+.phone .big{font-size:34px;letter-spacing:6px;color:var(--gold);line-height:1;margin-block:2px 6px}
+.phone .hint{font-size:14px;color:var(--muted)}
+.arrows{display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:14px;color:var(--muted);text-align:center}
+.arrows div{padding-top:4px}
+.arrows b{display:block;font-weight:600;color:var(--ink)}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.path{border-radius:16px;padding:16px;display:grid;gap:10px;align-content:start;border:1px solid var(--line);background:var(--surface)}
+.path .tag{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;justify-self:start}
+.path.good .tag{background:var(--green-soft);color:var(--green-ink)}
+.path.bad .tag{background:var(--red-soft);color:var(--red)}
+.path h3{font-size:17px}
+.path p{font-size:15px;color:var(--muted)}
+.btn{display:inline-block;padding:9px 12px;border-radius:10px;font-size:14px;font-weight:600;text-align:center}
+.btn.g{background:var(--green);color:#fff}
+.btn.tg{background:var(--tg);color:#fff}
+@media (max-width:440px){.paths{grid-template-columns:1fr}.arrows{grid-template-columns:1fr;gap:4px}}
+
+/* Telegram-сообщение */
+.tgmsg{background:var(--surface);border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:14px 16px;font-size:15.5px;line-height:1.45;display:grid;gap:4px;box-shadow:var(--shadow);max-width:420px}
+.tgmsg .from{font-size:13px;color:var(--tg);font-weight:600}
+.tgmsg .time{font-size:12px;color:var(--muted);justify-self:end}
+.tgmsg q{quotes:"«" "»"}
+
+/* Списки */
+.list{display:grid;gap:12px;padding:0;margin:0;list-style:none}
+.list li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.list .ic{width:32px;height:32px;border-radius:10px;background:var(--green-soft);color:var(--green-ink);display:grid;place-items:center;font-size:15px;flex:none;margin-top:1px}
+.list b{font-weight:600}
+.list span{display:block;color:var(--muted);font-size:15.5px}
+
+/* Рейтинг официантов */
+.docs{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:8px;box-shadow:var(--shadow);font-size:15px}
+.docs .t{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.docs .r{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;font-variant-numeric:tabular-nums}
+.docs .bar{height:6px;border-radius:3px;background:var(--surface-2);width:110px;position:relative;overflow:hidden}
+.docs .bar i{position:absolute;inset:0;background:var(--green);border-radius:3px}
+.docs .n{font-weight:600;min-width:2.6em;text-align:right}
+.docs .low .bar i{background:var(--red)}
+.docs .r>span:first-child{min-width:0;overflow-wrap:anywhere}
+@media (max-width:380px){.docs .bar{width:72px}.docs .r{gap:8px}}
+
+/* Модули */
+.mods{display:grid;gap:10px}
+.mod{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.mod .sw{width:38px;height:22px;border-radius:999px;background:var(--surface-2);position:relative;margin-top:2px}
+.mod .sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.mod.on .sw{background:var(--green)}
+.mod.on .sw::after{left:19px}
+.mod.base .sw{background:var(--green);opacity:.55}
+.mod.base .sw::after{left:19px}
+.mod b{font-weight:600;display:block}
+.mod span{color:var(--muted);font-size:15px}
+.mod em{font-style:normal;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--green-ink);background:var(--green-soft);padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.mod.opt em{color:var(--muted);background:var(--surface-2)}
+
+/* Табличка */
+.tentwrap{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+@media (max-width:520px){.tentwrap{grid-template-columns:1fr}}
+.tent{width:200px;background:var(--tent);color:#f3ede0;border-radius:8px;padding:14px 14px 12px;display:grid;gap:8px;justify-items:center;text-align:center;box-shadow:var(--shadow);transform:rotate(-2deg);margin-inline:auto}
+.tent .name{font-family:Onest,system-ui,sans-serif;font-weight:700;font-size:17px;justify-self:start;display:flex;justify-content:space-between;width:100%;align-items:center}
+.tent .name i{font-style:normal;font-family:Inter,sans-serif;font-size:10px;background:var(--tent-gold);color:#1b1810;padding:2px 7px;border-radius:999px;font-weight:600}
+.tent .cta{color:var(--tent-gold);font-weight:600;font-size:13px;letter-spacing:.06em}
+.tent canvas{width:130px;height:130px;background:#fff;border-radius:6px;padding:6px;image-rendering:pixelated}
+.tent .s{font-size:9.5px;color:#b9b2a3;line-height:1.35}
+
+/* Цена */
+.price{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 20px;display:grid;gap:18px;box-shadow:var(--shadow)}
+.price .row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:12px}
+.price .row:last-of-type{border-bottom:0;padding-bottom:0}
+.price .n{font-family:Onest,system-ui,sans-serif;font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price .n small{font-family:Inter,sans-serif;font-size:14px;color:var(--muted);font-weight:500}
+.price .d{color:var(--muted);font-size:15px;display:block}
+.ptable{gap:0;padding:14px 18px 16px}
+.ptable .ph,.ptable .pr{display:grid;grid-template-columns:1fr 92px 82px;gap:10px;align-items:center}
+.ptable .ph{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.ptable .ph span:not(:first-child),.ptable .pr .n{text-align:right}
+.ptable .pr{padding-block:12px;border-bottom:1px solid var(--line)}
+.ptable .pr:last-of-type{border-bottom:0}
+.ptable .n{font-size:20px}
+.ptable .pf{margin-top:12px;font-size:14px;color:var(--muted)}
+@media (max-width:440px){.ptable .ph,.ptable .pr{grid-template-columns:1fr 78px 70px}.ptable .n{font-size:17px}}
+.note{background:var(--gold-soft);border-radius:12px;padding:12px 14px;font-size:15px}
+.honest{border-left:3px solid var(--green);padding-left:14px;color:var(--muted);font-size:15.5px}
+
+/* Шаги */
+.steps{display:grid;gap:0;padding:0;margin:0;list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:14px;padding-block:12px;border-top:1px solid var(--line);counter-increment:s}
+.steps li:first-child{border-top:0;padding-top:0}
+.steps li::before{content:counter(s);font-family:Onest,system-ui,sans-serif;font-weight:700;font-size:20px;color:var(--green);width:22px;line-height:1.3}
+.steps b{font-weight:600}
+.steps span{display:block;color:var(--muted);font-size:15.5px}
+
+/* Контакт */
+.contact{background:var(--green);color:#fff;border-radius:18px;padding:24px 22px;display:grid;gap:10px}
+.contact h2{color:#fff}
+.contact p{color:rgba(255,255,255,.85)}
+.contact a{color:#fff;font-weight:600;text-decoration:none;font-size:22px;font-family:Onest,system-ui,sans-serif;font-weight:700}
+.contact a:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:4px}
+.contact .ways{font-size:14px;color:rgba(255,255,255,.75)}
+footer{margin-top:28px;font-size:13px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:no-preference){.tent{transition:transform .3s}.tent:hover{transform:rotate(0)}}
+/* Брендинг GMM Digital */
+.brand{display:inline-block;margin-bottom:26px}.brand img{height:28px;width:auto;display:block}
+.contact .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.contact .links a{font-family:Inter,system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);text-decoration:none}
+.contact .links a:hover{background:rgba(255,255,255,.22)}
+.contact .links svg{width:18px;height:18px;fill:currentColor}
+.spots{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width:480px){.spots{grid-template-columns:1fr}}
+.spot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}
+.spot .em{font-size:24px;line-height:1}
+.spot b{font-weight:600;font-size:15.5px}
+.spot span{font-size:14px;color:var(--muted)}
+.pneutral{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 20px;display:grid;gap:8px;box-shadow:var(--shadow)}
+.pneutral b{font-family:Onest,system-ui,sans-serif;font-size:21px;font-weight:700;line-height:1.2}
+.pneutral p{margin:0;color:var(--muted);font-size:15px}
+.eyebrow .omark{height:20px;width:auto;vertical-align:middle;margin:-3px 8px 0 0}
+.rate .omark-rate{height:36px;width:auto;margin:0 auto -14px}
+
+/* Репутация: отзыв с ответом и без */
+.review .noreply{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--red);font-weight:600;padding-top:8px;border-top:1px dashed var(--line)}
+.review .reply{margin-top:4px;padding:10px 12px;border-left:3px solid var(--green);background:var(--green-soft);border-radius:0 10px 10px 0;font-size:14.5px;display:grid;gap:3px}
+.review .reply b{font-size:12.5px;color:var(--green-ink);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.tg-msg .draft{display:block;margin-top:6px;padding:6px 8px;border-left:2px solid #5eb5f7;background:rgba(94,181,247,.08);border-radius:0 6px 6px 0;color:#dfe8f0}
+.tg-msg.ok{background:#1f3a2c}
+.tg-kb.three div{grid-template-columns:1fr 1fr}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:520px){.flow{grid-template-columns:1fr}}
+.flow div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}
+.flow .num{font-family:Onest,system-ui,sans-serif;font-weight:700;font-size:22px;color:var(--green);line-height:1}
+.flow b{font-weight:600;font-size:15.5px}
+.flow span{font-size:14px;color:var(--muted)}
+.sources{display:flex;flex-wrap:wrap;gap:8px}
+.sources span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;font-weight:600}
+.sources span.dim{color:var(--muted);font-weight:500}
+/* Помощник: ступени */
+.tiers{display:grid;gap:14px}
+.tier{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 18px 16px;display:grid;gap:10px;box-shadow:var(--shadow)}
+.tier .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.tier h3{font-size:21px;font-weight:700}
+.tier .lvl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--green-ink);background:var(--green-soft);padding:3px 9px;border-radius:999px;font-weight:600}
+.tier .pr{font-family:Onest,system-ui,sans-serif;font-weight:700;font-size:18px;white-space:nowrap}
+.tier .pr small{font-family:Inter,sans-serif;font-weight:500;font-size:13px;color:var(--muted)}
+.tier p{color:var(--muted);font-size:15.5px}
+.tier ul{margin:0;padding-left:18px;color:var(--ink);font-size:15px;display:grid;gap:4px}
+.tier .for{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+.tier .for b{color:var(--ink);font-weight:600}
+
+.ptable .ph,.ptable .pr{grid-template-columns:1fr 104px 72px}
+@media (max-width:440px){.ptable .ph,.ptable .pr{grid-template-columns:1fr 96px 64px}.ptable .n{font-size:16px}}
+/* Экран меню */
+.menu{background:#fbf7f0;color:#1f1a14;text-align:left;display:grid;grid-template-rows:auto auto auto 1fr auto;position:relative}
+.menu .dev-bar{color:#1f1a14}.menu .dev-bar .bat i{border-color:rgba(0,0,0,.6)}.menu .dev-bar .bat i::after{background:#1f1a14}
+.menu .mh{padding:8px 16px 10px;border-bottom:1px solid #e9e1d3}
+.menu .mh .nm{font-family:Onest,system-ui,sans-serif;font-weight:700;font-size:20px;line-height:1.1}
+.menu .mh .tb{font-size:11px;color:#8a7f70;margin-top:2px}
+.menu .tabs{display:flex;gap:6px;padding:8px 12px;overflow:hidden;font-size:11.5px}
+.menu .tabs span{padding:5px 9px;border-radius:999px;background:#efe8db;white-space:nowrap;color:#5a5044}
+.menu .tabs span.on{background:#1f1a14;color:#fbf7f0}
+.menu .items{padding:2px 12px 8px;display:grid;gap:8px;align-content:start}
+.menu .it{display:grid;grid-template-columns:44px 1fr auto;gap:9px;align-items:center;font-size:12px}
+.menu .it i{display:block;width:44px;height:44px;border-radius:9px;background:linear-gradient(135deg,#e6c9a5,#c98f5a)}
+.menu .it i.b{background:linear-gradient(135deg,#d9e3c4,#7f9a5a)}.menu .it i.c{background:linear-gradient(135deg,#f0d3c8,#b95d4c)}.menu .it i.d{background:linear-gradient(135deg,#e9dcc6,#a58562)}
+.menu .it b{display:block;font-weight:600;font-size:12.5px;line-height:1.2}.menu .it small{color:#8a7f70;font-size:10.5px}
+.menu .it .p{font-weight:600;white-space:nowrap}
+.menu .ask{margin:0 10px 10px;background:#1f1a14;color:#fbf7f0;border-radius:14px;padding:9px 12px;display:grid;gap:4px;text-align:center}
+.menu .ask b{font-size:12.5px;font-weight:600}.menu .ask span{color:#e8c37a;letter-spacing:3px;font-size:16px;line-height:1}
+.menu .ask small{font-size:9.5px;color:#b9b2a3}
+.checks{display:grid;gap:10px}
+.check{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.check .ok{width:26px;height:26px;border-radius:50%;background:var(--green-soft);color:var(--green-ink);display:grid;place-items:center;font-size:14px;font-weight:700;margin-top:1px}
+.check b{font-weight:600;display:block}.check span{color:var(--muted);font-size:15px}
+.chat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:8px;font-size:15.5px;box-shadow:var(--shadow)}
+.chat .src{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.chat .bub{background:var(--surface-2);border-radius:14px 14px 14px 4px;padding:9px 12px;justify-self:start;max-width:90%}
+.chat .seen{font-size:13px;color:var(--red);font-weight:600}
+.ptable .ph,.ptable .pr{grid-template-columns:1fr 104px 72px}
+@media (max-width:440px){.ptable .ph,.ptable .pr{grid-template-columns:1fr 96px 64px}.ptable .n{font-size:16px}}
+
+/* Сервис: экран каталога */
+.cat{background:#f6f7f9;color:#171a1f;text-align:left;display:grid;grid-template-rows:auto auto auto 1fr auto;position:relative}
+.cat .dev-bar{color:#171a1f}.cat .dev-bar .bat i{border-color:rgba(0,0,0,.6)}.cat .dev-bar .bat i::after{background:#171a1f}
+.cat .mh{padding:8px 16px 8px;border-bottom:1px solid #e3e6ea}
+.cat .mh .nm{font-family:Onest,system-ui,sans-serif;font-weight:700;font-size:18px;line-height:1.1}
+.cat .mh .tb{font-size:11px;color:#6b7280;margin-top:2px}
+.cat .tabs{display:flex;gap:6px;padding:8px 12px;overflow:hidden;font-size:11.5px}
+.cat .tabs span{padding:5px 9px;border-radius:999px;background:#e8ebef;white-space:nowrap;color:#4b5563}
+.cat .tabs span.on{background:#171a1f;color:#fff}
+.cat .items{padding:2px 12px 8px;display:grid;gap:7px;align-content:start}
+.cat .it{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;font-size:12px;background:#fff;border:1px solid #e3e6ea;border-radius:9px;padding:7px 9px}
+.cat .it b{display:block;font-weight:600;font-size:12.5px;line-height:1.2}.cat .it small{color:#6b7280;font-size:10.5px}
+.cat .it .p{font-weight:600;white-space:nowrap;font-size:11.5px}.cat .it b{white-space:nowrap}
+.cat .it .q{display:flex;align-items:center;gap:5px;font-size:12px}.cat .it .q i{width:20px;height:20px;border-radius:6px;background:#e8ebef;display:grid;place-items:center;font-style:normal;font-size:13px}
+.cat .it .q em{font-style:normal;font-weight:600;min-width:16px;text-align:center}
+.cat .sum{margin:0 10px 10px;background:#171a1f;color:#fff;border-radius:12px;padding:9px 12px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:6px}
+.cat .sum b{font-size:12.5px;font-weight:600}.cat .sum small{display:block;font-size:10px;color:#b6bcc6}
+.cat .sum span{background:#d8a56a;color:#171a1f;font-weight:600;font-size:12px;padding:7px 10px;border-radius:9px;white-space:nowrap}
+.ptable .ph,.ptable .pr{grid-template-columns:minmax(0,1fr) 104px 72px}.ptable .pr>span:first-child{min-width:0}
+@media (max-width:440px){.ptable .ph,.ptable .pr{grid-template-columns:minmax(0,1fr) 96px 64px}}
+@media (max-width:350px){.ptable .ph,.ptable .pr{grid-template-columns:minmax(0,1fr) 82px 58px;gap:6px}.ptable .n{font-size:14.5px}}
+</style>
+</head><body><div class="wrap">
+
+<a class="brand" href="/" aria-label="GMM Digital — на главную"><picture><source srcset="/img/logo.svg" media="(prefers-color-scheme: dark)"><img src="/img/logo-dark.svg" alt="GMM Digital — цифровые услуги" width="217" height="60"></picture></a>
+
+  <header class="hero">
+    <p class="eyebrow">Сервис · кабинет заказов</p>
+    <h1>Дилер заказывает за минуту. Менеджер не переспрашивает. Владелец видит день целиком.</h1>
+    <p class="sub">Кабинет заказов для дилеров, прорабов и постоянных клиентов: свой прайс каждому, заказ в Telegram с кнопками, история, статус отгрузки, остатки и долг. Вместо тетради и голосовых в WhatsApp.</p>
+    <div class="sources" aria-label="Кому"><span>Производство</span><span>Оптовый склад</span><span>Стройбаза</span><span>Дистрибьютор</span></div>
+  </header>
+
+  <section class="section">
+    <h2>Знакомая ситуация</h2>
+    <p class="lead">Дилер присылает голосовое в семь утра: «Скинь сорок мешков штукатурки и десять шпаклёвки, на завтра, туда же». Менеджер переслушивает, переспрашивает, какая шпаклёвка, записывает в тетрадь. Днём звонит бухгалтер — счёт на что? Вечером кладовщик собирает тридцать мешков, потому что «сорок» не расслышал. Дилер получает не то, звонит, ругается. Это один заказ. В день их двадцать.</p>
+    <div class="chat" aria-label="Пример сообщения в WhatsApp">
+      <div class="src">WhatsApp · менеджер · 07:12</div>
+      <div class="bub">🎤 Голосовое сообщение · 0:41</div>
+      <div class="bub">а ещё то что в прошлый раз брал добавь</div>
+      <div class="seen">Что «то»? Сколько? На какой адрес? Менеджер перезванивает — дилер не берёт трубку</div>
+    </div>
+    <p class="muted">Каждый заказ проходит через три пары рук и одну тетрадь. Ошибка на любом шаге — лишний рейс машины, недовольный дилер или товар, который никто не оплатил.</p>
+  </section>
+
+  <section class="section">
+    <h2>Как это работает</h2>
+    <div class="device" aria-label="Кабинет заказов на телефоне дилера">
+      <p class="cap">Дилер открывает ссылку — и видит свой прайс</p>
+      <div class="dev"><div class="dev-in"><div class="cat">
+        <div class="dev-bar"><span>07:12</span><span class="isl"></span><span class="bat"><i></i></span></div>
+        <div class="mh"><div class="nm">Каспий-Строй</div><div class="tb">Дилер: ИП Алиев · ваши цены · долг 0 ₽</div></div>
+        <div class="tabs"><span class="on">Штукатурка</span><span>Шпаклёвка</span><span>Клей</span><span>Пазогребень</span></div>
+        <div class="items">
+          <div class="it"><div><b>Штукатурка 30 кг</b><small>склад: 1 240</small></div><div class="p">310 ₽</div><div class="q"><i>−</i><em>40</em><i>+</i></div></div>
+          <div class="it"><div><b>Шпаклёвка 20 кг</b><small>склад: 380</small></div><div class="p">420 ₽</div><div class="q"><i>−</i><em>10</em><i>+</i></div></div>
+          <div class="it"><div><b>Клей 25 кг</b><small>склад: 96</small></div><div class="p">390 ₽</div><div class="q"><i>−</i><em>0</em><i>+</i></div></div>
+          <div class="it"><div><b>Пазогребень</b><small>склад: 2 100</small></div><div class="p">245 ₽</div><div class="q"><i>−</i><em>0</em><i>+</i></div></div>
+          <div class="it"><div><b>Грунтовка 10 л</b><small>склад: 210</small></div><div class="p">480 ₽</div><div class="q"><i>−</i><em>0</em><i>+</i></div></div>
+          <div class="it"><div><b>Профиль 60×27</b><small>склад: 1 500</small></div><div class="p">190 ₽</div><div class="q"><i>−</i><em>0</em><i>+</i></div></div>
+        </div>
+        <div class="sum"><div><b>50 мешков · 16 600 ₽</b><small>Завтра · Каспийск · самовывоз</small></div><span>Заказать</span></div>
+      </div></div></div>
+    </div>
+    <div class="flow" aria-label="Три шага">
+      <div><span class="num">1</span><b>Дилер заказывает сам</b><span>по ссылке или в Telegram: свой прайс, остатки, «повторить прошлый заказ». Без звонков и голосовых</span></div>
+      <div><span class="num">2</span><b>Менеджеру — заказ с кнопками</b><span>«Принять», «Уточнить», «Нет в наличии». Дилер тут же видит, что заказ принят</span></div>
+      <div><span class="num">3</span><b>Дальше все видят одно и то же</b><span>кладовщик — что собирать, бухгалтер — на что счёт, дилер — статус, владелец — сводку дня</span></div>
+    </div>
+    <div class="device" aria-label="Пример уведомлений в Telegram — менеджер">
+      <p class="cap">Что приходит менеджеру в Telegram</p>
+      <div class="dev"><div class="dev-in"><div class="tgs">
+        <div class="dev-bar"><span>07:13</span><span class="isl"></span><span class="bat"><i></i></span></div>
+        <div class="tg-head"><span class="back">‹</span><span class="av"><svg viewBox="0 0 136 136" aria-hidden="true"><rect width="136" height="136" fill="#0a2233"/><g transform="translate(18,18)"><path d="M30 6 H70 A24 24 0 0 1 94 30 V58 A24 24 0 0 1 70 82 H44 C36 82 26 88 14 97 C18 90 20 86 20 81 A24 24 0 0 1 6 58 V30 A24 24 0 0 1 30 6 Z" fill="#e8c37a"/><path d="M50.00 19.00 L56.17 35.51 L73.78 36.27 L59.99 47.24 L64.69 64.23 L50.00 54.50 L35.31 64.23 L40.01 47.24 L26.22 36.27 L43.83 35.51Z" fill="#0a2233"/></g></svg></span><div><div class="nm">Каспий-Строй · заказы</div><div class="st">бот</div></div></div>
+        <div class="tg-body">
+          <span class="tg-day">Пример</span>
+          <div class="tg-msg">📦 <b>Заказ № 418</b> · ИП Алиев
+Штукатурка гипсовая 30 кг — <b>40</b>
+Шпаклёвка финишная 20 кг — <b>10</b>
+Итого <b>16 600 ₽</b> · по прайсу дилера
+Завтра · Каспийск · самовывоз
+Долг по дилеру: 0 ₽<span class="tm">07:13</span></div>
+          <div class="tg-msg ok">✅ Принят · Мурад
+Алиеву отправлено: «Заказ № 418 принят, готов к выдаче завтра с 9:00»
+Кладовщику и бухгалтеру — ушло<span class="tm">07:20</span></div>
+          <div class="tg-msg"><b>Итог дня</b>
+Заказов: <b>23</b> · 1 180 мешков · 388 000 ₽
+Принято 23, уточнений 2, отгружено 19
+Не заказывали больше 2 недель: ИП Гаджиев, «СтройМир»<span class="tm">19:00</span></div>
+        </div>
+        <div class="tg-input"><span class="pin"></span><span class="box">Сообщение</span></div>
+        <div class="tg-kb"><div><span>✅ Принять</span><span>❓ Уточнить</span></div><div><span>🚚 Отгружен</span><span>📊 Сегодня</span></div></div>
+      </div></div></div>
+    </div>
+    <p class="muted">Заказ пришёл в 07:13 — с количеством, ценой по прайсу этого дилера, адресом и датой. Менеджер нажал «Принять» с телефона. Никто ничего не переспрашивал и не переслушивал.</p>
+  </section>
+
+  <section class="section">
+    <h2>Что получает каждый</h2>
+    <ul class="list">
+      <li><span class="ic">🏪</span><div><b>Дилер</b><span>свой прайс и остатки без звонка; заказ за минуту в любое время; «повторить прошлый»; видит статус — принят, собран, отгружен; свой долг и историю оплат</span></div></li>
+      <li><span class="ic">📱</span><div><b>Менеджер</b><span>заказы приходят готовыми, в одном месте; кнопки вместо звонков; ничего не теряется — в конце дня видно, что не принято</span></div></li>
+      <li><span class="ic">🏗</span><div><b>Склад и бухгалтерия</b><span>кладовщик видит, что собирать на завтра; бухгалтер — на что счёт; заказ, счёт и отгрузка — один и тот же номер</span></div></li>
+      <li><span class="ic">👤</span><div><b>Владелец</b><span>сводка дня: сколько заказов, тонн, денег; кто из дилеров давно не заказывал; кто должен и сколько — без вопросов менеджеру</span></div></li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Две ступени</h2>
+    <p class="muted">Начинаете с заказов. Склад и долг добавляем, когда понадобится, — кабинет тот же.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="top"><h3>Заказы</h3><span class="pr">60 000 <small>₽</small> · 3 000 <small>₽ / мес</small></span></div>
+        <p>Каталог с вашими позициями, у каждого клиента — свой прайс и свой вход. Заказ уходит менеджеру в Telegram с кнопками, клиенту — подтверждение. История и повтор заказа.</p>
+        <ul><li>До 100 клиентов-дилеров включено</li><li>Заказы по ссылке и прямо в Telegram</li><li>Итог дня и «кто давно не заказывал»</li></ul>
+        <div class="for"><b>Кому:</b> производство, оптовый склад, стройбаза — всем, кто принимает заказы голосом и в тетрадь</div>
+      </div>
+      <div class="tier">
+        <div class="top"><h3>Заказы + склад и долг</h3><span class="pr">100 000 <small>₽</small> · 5 000 <small>₽ / мес</small></span></div>
+        <p>То же плюс остатки на складе в каталоге, статусы «собран — отгружен — доставлен», долг по каждому клиенту и история оплат, кладовщик и бухгалтер в боте.</p>
+        <ul><li>Дилер видит остатки и свой долг сам — без звонка</li><li>Владелец видит, кто должен и сколько</li><li>Несколько складов и адресов отгрузки</li></ul>
+        <div class="for"><b>Кому:</b> когда клиентов больше 30 или несколько складов, и вопросы «что на складе» и «кто должен» съедают день</div>
+      </div>
+    </div>
+    <p class="muted">Ведёте учёт в 1С или МоёмСкладе и хотите, чтобы остатки и заказы шли туда сами? Интеграцию считаем отдельно после разговора.</p>
+  </section>
+
+  <section class="section">
+    <h2>Что можно настроить</h2>
+    <p class="muted">Базовые функции — всегда. Остальное включаем или выключаем по вашему желанию, в любой момент, без доплаты за само включение.</p>
+    <div class="mods">
+      <div class="mod base"><span class="sw" aria-hidden="true"></span><div><b>Свой прайс каждому клиенту <em>базово</em></b><span>дилер, прораб, магазин — разные цены, каждый видит только свои</span></div></div>
+      <div class="mod base"><span class="sw" aria-hidden="true"></span><div><b>Заказ менеджеру в Telegram с кнопками <em>базово</em></b><span>принять, уточнить, нет в наличии — одно нажатие</span></div></div>
+      <div class="mod base"><span class="sw" aria-hidden="true"></span><div><b>История и повтор заказа <em>базово</em></b><span>у постоянных клиентов заказы повторяются — одна кнопка вместо перечисления</span></div></div>
+      <div class="mod on"><span class="sw" aria-hidden="true"></span><div><b>Подтверждение и статус клиенту <em>рекомендуем</em></b><span>«принят», «готов к выдаче», «отгружен» — дилер не звонит спросить</span></div></div>
+      <div class="mod on"><span class="sw" aria-hidden="true"></span><div><b>Итог дня владельцу <em>рекомендуем</em></b><span>заказов, тонн, денег; кто давно не заказывал; что не принято</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Минимальный заказ и кратность <em>по желанию</em></b><span>только паллетами, не меньше 20 мешков — кабинет сам не даст заказать иначе</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Остатки в каталоге <em>склад и долг</em></b><span>дилер видит, что есть; «нет в наличии» ставится за минуту</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Долг и оплаты <em>склад и долг</em></b><span>кто должен и сколько; напоминание дилеру, когда просрочено; лимит долга — заказ выше лимита идёт на согласование</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Кладовщик и бухгалтер в боте <em>склад и долг</em></b><span>кладовщику — что собирать, кнопка «Собран»; бухгалтеру — на что счёт</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Доставка и адреса <em>по желанию</em></b><span>несколько адресов у дилера, самовывоз или доставка, окно выдачи</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Заказы в таблицу <em>по желанию</em></b><span>каждый заказ строкой — для сверок и отчётов; выгрузка за месяц</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Акции и новые позиции всем клиентам <em>по желанию</em></b><span>сообщение в кабинет и в Telegram: новая цена, новый товар, остаток по акции</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Интеграция с 1С / МойСклад <em>отдельно</em></b><span>остатки и заказы идут в учёт сами — считаем после разговора</span></div></div>
+    </div>
+    <p class="muted">Нужно иначе — заявки от торговых представителей с выезда, заказы под производство с датой готовности, рекламации с фото? При необходимости можно доработать под ваш сценарий.</p>
+  </section>
+
+  <section class="section">
+    <h2>А есть же B2B-порталы и МойСклад?</h2>
+    <p class="lead">Есть. Порталы для дилеров стоят от полумиллиона и ставятся месяцами — это для компаний с 1С, отделом ИТ и сотнями позиций. МойСклад — учёт, к которому кабинет заказов идёт приложением: сначала нужно завести весь склад, и делать это будете вы. Сервис — про другое:</p>
+    <ul class="list">
+      <li><span class="ic">1</span><div><b>Только то, что нужно на самом деле</b><span>заказ, статус, история, долг. Без модулей, которыми никто не пользуется</span></div></li>
+      <li><span class="ic">2</span><div><b>Дилеру ничего не ставить и не учить</b><span>ссылка и Telegram. Открыл, нажал, заказал — как в интернет-магазине</span></div></li>
+      <li><span class="ic">3</span><div><b>Заполняем мы</b><span>прайс и клиентов присылаете в любом виде — переносим сами. Через неделю дилеры заказывают</span></div></li>
+      <li><span class="ic">4</span><div><b>Живой человек рядом</b><span>новая позиция, другая цена, ещё один склад — пишете в WhatsApp, меняем в тот же день</span></div></li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Честно про внедрение</h2>
+    <p class="honest">Кабинет не заменит менеджера и не заставит дилеров заказывать по-новому сам по себе. Первые две недели менеджер говорит каждому: «Заказывай здесь — так быстрее и без ошибок», и мы помогаем это пережить. Обычно после этого голосовые в WhatsApp заканчиваются сами: дилеру так тоже проще.</p>
+  </section>
+
+  <section class="section">
+    <h2>Сколько стоит</h2>
+    <div class="price ptable">
+      <div class="ph"><span>Ступень</span><span>Разово</span><span>В месяц</span></div>
+      <div class="pr"><span>Заказы</span><span class="n">60 000 <small>₽</small></span><span class="n">3 000 <small>₽</small></span></div>
+      <div class="pr"><span>Заказы + склад и долг</span><span class="n">100 000 <small>₽</small></span><span class="n">5 000 <small>₽</small></span></div>
+      <p class="pf">Разово — каталог и прайсы, вход для каждого клиента, сценарий заказа, подключение менеджера, склада и бухгалтерии, обучение. В месяц — сервер, уведомления, итоги дня, до 100 клиентов, любые правки: новые позиции, цены, склады.</p>
+    </div>
+    <p class="note">Один перепутанный заказ — лишний рейс машины и недовольный дилер. Один дилер, который не ушёл к соседям, — год обслуживания.</p>
+    <p class="note">Интеграция с 1С или МоимСкладом и больше 100 клиентов — по расчёту после разговора.</p>
+  </section>
+
+  <section class="section">
+    <h2>Запуск — две-три недели</h2>
+    <ol class="steps">
+      <li><div><b>Вы присылаете прайс и список клиентов</b><span>в любом виде — Excel, фото, из 1С; и рассказываете, как заказ идёт сейчас: кто принимает, кто собирает, кто выставляет счёт</span></div></li>
+      <li><div><b>Мы собираем кабинет и показываем на телефоне</b><span>на ваших позициях и ваших дилерах — правите словами, вносим</span></div></li>
+      <li><div><b>Менеджер, кладовщик, бухгалтер вводят код в боте</b><span>две минуты каждому, никаких установок</span></div></li>
+      <li><div><b>Дилерам уходит ссылка — и первые заказы</b><span>текст сообщения дилерам напишем; первые две недели рядом — отвечаем и им, и вам</span></div></li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="contact">
+      <h2>Подключить «Сервис»</h2>
+      <p>Напишите или позвоните — отвечу, покажу на телефоне, как это выглядит у дилера и у менеджера.</p>
+      <a href="tel:+79387777440">+7 938 777-74-40</a>
+      <p class="ways">Магомедсалам · WhatsApp, Telegram, звонок</p>
+      <div class="links"><a href="https://wa.me/79387777440" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.4 1.5.5a3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>WhatsApp</a><a href="https://t.me/+79387777440" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21.9 4.4 18.7 19.6c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.5-.6-.2L6.2 13.3l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.4z"/></svg>Telegram</a><a href="tel:+79387777440">Позвонить</a><a href="https://instagram.com/gmm.digital" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.9-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM12 3.7c2.7 0 3 0 4.1.1 1 0 1.5.2 1.9.3.5.2.8.4 1.1.7.4.4.6.7.7 1.2.2.4.3.9.4 1.9 0 1 .1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.5-.4 1.9-.1.5-.4.8-.7 1.1-.3.4-.7.6-1.1.7-.4.2-.9.3-1.9.4-1.1 0-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.5-.2-1.9-.4-.5-.1-.8-.4-1.1-.7-.4-.3-.6-.7-.7-1.1-.2-.4-.3-.9-.4-1.9 0-1.1-.1-1.4-.1-4.1s0-3 .1-4.1c0-1 .2-1.5.4-1.9.1-.5.4-.8.7-1.2.3-.3.7-.5 1.1-.7.4-.1.9-.3 1.9-.3 1.1-.1 1.4-.1 4.1-.1zM12 2C9.3 2 8.9 2 7.9 2.1c-1.1 0-1.8.2-2.5.5-.7.2-1.2.6-1.8 1.1-.5.6-.9 1.1-1.1 1.8-.3.7-.5 1.4-.5 2.5C2 8.9 2 9.3 2 12s0 3.1.1 4.1c0 1.1.2 1.8.5 2.5.2.7.6 1.2 1.1 1.8.6.5 1.1.9 1.8 1.1.7.3 1.4.5 2.5.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1.1 0 1.8-.2 2.5-.5.7-.2 1.2-.6 1.8-1.1.5-.6.9-1.1 1.1-1.8.3-.7.5-1.4.5-2.5.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1c0-1.1-.2-1.8-.5-2.5-.2-.7-.6-1.2-1.1-1.8-.6-.5-1.1-.9-1.8-1.1-.7-.3-1.4-.5-2.5-.5C15.1 2 14.7 2 12 2z"/></svg>Instagram</a></div>
+    </div>
+  </section>
+
+  <footer>GMM Digital · Махачкала · 2026 · <a href="https://instagram.com/gmm.digital" target="_blank" rel="noopener" style="color:inherit">@gmm.digital</a></footer>
+</div>
+</body></html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Отклик для клиники и медцентра — GMM Digital</title>
+<meta name="description" content="Довольные пациенты — в 2ГИС и Яндекс. Недовольные — вам лично, а не в интернет. QR в кабинете и на ресепшене. Пациент ставит оценку за 10 секунд — и дальше два разных пути.">
+<link rel="canonical" href="https://gmm-digital.ru/otklik/klinika">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Отклик для клиники и медцентра — GMM Digital">
+<meta property="og:description" content="Довольные пациенты — в 2ГИС и Яндекс. Недовольные — вам лично, а не в интернет. QR в кабинете и на ресепшене. Пациент ставит оценку за 10 секунд — и дальше два разных пути.">
+<meta property="og:image" content="https://gmm-digital.ru/img/og.jpg">
+<meta property="og:url" content="https://gmm-digital.ru/otklik/klinika">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts/manrope.css"><link rel="stylesheet" href="/fonts/golos-text.css">
+<link rel="icon" href="/img/favicon.png" type="image/png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+:root{
+  --bg:#f3f6f6; --surface:#ffffff; --surface-2:#e3eaeb;
+  --ink:#18262a; --muted:#5b6b70; --line:#d3dcde;
+  --green:#1b6b78; --green-soft:#dcedef; --green-ink:#124a53;
+  --gold:#c9a55a; --gold-soft:#f5ecd6;
+  --red:#b7442e; --red-soft:#f5e3de;
+  --tg:#2aabee;
+  --tent:#0f2c32; --tent-gold:#d9b56a;
+  --shadow:0 10px 30px rgba(27,34,48,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0f1719; --surface:#162022; --surface-2:#1f2b2e;
+    --ink:#e6ecee; --muted:#96a6ab; --line:#2a383c;
+    --green:#5cb4c0; --green-soft:#162a2e; --green-ink:#bfe4ea;
+    --gold:#d9b56a; --gold-soft:#3a3016;
+    --red:#e2705a; --red-soft:#3d221c;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{--bg:#0f1719; --surface:#162022; --surface-2:#1f2b2e;
+    --ink:#e6ecee; --muted:#96a6ab; --line:#2a383c;
+    --green:#5cb4c0; --green-soft:#162a2e; --green-ink:#bfe4ea;
+    --gold:#d9b56a; --gold-soft:#3a3016;
+    --red:#e2705a; --red-soft:#3d221c;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding-block:28px 64px;padding-inline:20px}
+h1,h2,h3{font-family:Manrope,system-ui,sans-serif;line-height:1.15;margin:0;text-wrap:balance;font-weight:800;letter-spacing:0}
+h1{font-size:clamp(30px,7vw,42px);letter-spacing:-.01em}
+h2{font-size:clamp(24px,5.4vw,30px)}
+h3{font-size:19px;font-weight:600}
+p{margin:0}
+.eyebrow{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.section{display:grid;gap:16px;margin-top:52px}
+.lead{font-size:19px;color:var(--ink)}
+.muted{color:var(--muted)}
+.hi{color:var(--green)}
+.hero{display:grid;gap:18px;padding-top:8px}
+.hero .sub{font-size:19px;color:var(--muted);max-width:32ch}
+
+/* Пример из 2ГИС */
+.review{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:8px;font-size:15.5px;box-shadow:var(--shadow)}
+.review .who{display:flex;gap:10px;align-items:center}
+.review .ava{width:34px;height:34px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;font-weight:600;color:var(--muted);font-size:14px}
+.review .stars{color:var(--gold);letter-spacing:2px;font-size:14px}
+.review .t{color:var(--ink)}
+.review .when{font-size:13px;color:var(--muted)}
+
+/* Телефон */
+.device{display:grid;gap:14px;justify-items:center}
+.device .cap{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600;text-align:center}
+.dev{width:min(270px,100%);background:#0a0a0a;border-radius:40px;padding:9px;box-shadow:var(--shadow),0 0 0 1px rgba(255,255,255,.08) inset}
+.dev-in{border-radius:32px;overflow:hidden;background:#000;display:grid;min-height:540px}
+.dev-bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:10px 22px 0;color:#fff;font-size:12.5px;font-weight:600}
+.dev-bar .isl{width:78px;height:22px;background:#000;border-radius:20px}
+.dev-bar .bat{justify-self:end;display:flex;align-items:center;gap:5px}
+.dev-bar .bat i{display:block;width:20px;height:10px;border:1.5px solid rgba(255,255,255,.7);border-radius:3px;position:relative}
+.dev-bar .bat i::after{content:"";position:absolute;inset:2px;right:4px;background:#fff;border-radius:1px}
+/* Экран оценки — как у гостя */
+.rate{background:radial-gradient(60% 40% at 50% 0%,rgba(201,165,90,.14),transparent 70%),#0e0d0b;color:#f3ede0;text-align:center;padding:0 16px 40px;display:flex;flex-direction:column;justify-content:center}
+.rate .dev-bar{position:absolute;left:0;right:0;top:0}
+.rate{position:relative}
+.rate .dev-bar{padding-inline:14px}
+.rate .rb{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#c9a55a;margin:26px 0 6px}
+.rate .rn{font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
+.rate .rs{color:#a39b88;font-size:13px;margin:4px 0 28px}
+.rate .ra{font-size:18px;font-weight:600;margin-bottom:14px}
+.rate .rstars{display:flex;justify-content:center;gap:4px}
+.rate .rstars svg{width:42px;height:42px;fill:none;stroke:#c9a55a;stroke-width:1.4}
+.rate .rh{color:#a39b88;font-size:12px;margin-top:10px}
+/* Экран Telegram — как у хозяина */
+.tgs{background:#0e1621;color:#f2f5f8;font-size:13px;line-height:1.4;text-align:left;display:grid;grid-template-rows:auto auto 1fr auto auto}
+.tgs .dev-bar{background:#17212b;padding-bottom:6px}
+.tg-head{display:flex;align-items:center;gap:10px;padding:4px 12px 10px;background:#17212b}
+.tg-head .back{color:#5eb5f7;font-size:24px;line-height:1;margin-top:-3px}
+.tg-head .av{width:34px;height:34px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#0a2233}.tg-head .av svg{width:34px;height:34px;display:block}
+.tg-head .nm{font-weight:600;font-size:14.5px;line-height:1.15}
+.tg-head .st{font-size:11.5px;color:#8b9aa8}
+.tg-body{padding:10px 10px 12px;display:grid;gap:8px;align-content:start;justify-items:start;background:#0e1621}
+.tg-day{justify-self:center;background:rgba(0,0,0,.35);color:#c5d0da;font-size:11px;padding:3px 9px;border-radius:999px}
+.tg-msg{background:#182533;border-radius:12px 12px 12px 3px;padding:6px 10px 5px;max-width:100%;white-space:pre-line;font-size:12.5px}
+.tg-msg b{font-weight:600}
+.tg-msg .tm{display:block;text-align:right;font-size:10.5px;color:#6d8199;margin-top:2px}
+.tg-input{display:flex;align-items:center;gap:10px;padding:7px 12px;background:#17212b;color:#6d8199;font-size:13px}
+.tg-input .pin{width:18px;height:18px;border:2px solid #6d8199;border-radius:6px;transform:rotate(45deg);opacity:.7}
+.tg-input .box{flex:1;background:#242f3d;border-radius:14px;padding:6px 12px}
+.tg-kb{background:#17212b;padding:2px 6px 10px;display:grid;gap:5px}
+.tg-kb div{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.tg-kb span{background:#2b3a4a;border-radius:8px;padding:9px 4px;text-align:center;font-size:12.5px;color:#fff;white-space:nowrap}
+
+/* Развилка */
+.fork{display:grid;gap:14px}
+.phone{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 18px 20px;display:grid;gap:10px;box-shadow:var(--shadow);justify-items:center;text-align:center}
+.phone .cap{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.phone .q{font-family:Manrope,system-ui,sans-serif;font-size:22px;font-weight:800}
+.phone .big{font-size:34px;letter-spacing:6px;color:var(--gold);line-height:1;margin-block:2px 6px}
+.phone .hint{font-size:14px;color:var(--muted)}
+.arrows{display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:14px;color:var(--muted);text-align:center}
+.arrows div{padding-top:4px}
+.arrows b{display:block;font-weight:600;color:var(--ink)}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.path{border-radius:16px;padding:16px;display:grid;gap:10px;align-content:start;border:1px solid var(--line);background:var(--surface)}
+.path .tag{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;justify-self:start}
+.path.good .tag{background:var(--green-soft);color:var(--green-ink)}
+.path.bad .tag{background:var(--red-soft);color:var(--red)}
+.path h3{font-size:17px}
+.path p{font-size:15px;color:var(--muted)}
+.btn{display:inline-block;padding:9px 12px;border-radius:10px;font-size:14px;font-weight:600;text-align:center}
+.btn.g{background:var(--green);color:#fff}
+.btn.tg{background:var(--tg);color:#fff}
+@media (max-width:440px){.paths{grid-template-columns:1fr}.arrows{grid-template-columns:1fr;gap:4px}}
+
+/* Telegram-сообщение */
+.tgmsg{background:var(--surface);border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:14px 16px;font-size:15.5px;line-height:1.45;display:grid;gap:4px;box-shadow:var(--shadow);max-width:420px}
+.tgmsg .from{font-size:13px;color:var(--tg);font-weight:600}
+.tgmsg .time{font-size:12px;color:var(--muted);justify-self:end}
+.tgmsg q{quotes:"«" "»"}
+
+/* Списки */
+.list{display:grid;gap:12px;padding:0;margin:0;list-style:none}
+.list li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.list .ic{width:32px;height:32px;border-radius:10px;background:var(--green-soft);color:var(--green-ink);display:grid;place-items:center;font-size:15px;flex:none;margin-top:1px}
+.list b{font-weight:600}
+.list span{display:block;color:var(--muted);font-size:15.5px}
+
+/* Рейтинг официантов */
+.docs{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:8px;box-shadow:var(--shadow);font-size:15px}
+.docs .t{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.docs .r{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;font-variant-numeric:tabular-nums}
+.docs .bar{height:6px;border-radius:3px;background:var(--surface-2);width:110px;position:relative;overflow:hidden}
+.docs .bar i{position:absolute;inset:0;background:var(--green);border-radius:3px}
+.docs .n{font-weight:600;min-width:2.6em;text-align:right}
+.docs .low .bar i{background:var(--red)}
+.docs .r>span:first-child{min-width:0;overflow-wrap:anywhere}
+@media (max-width:380px){.docs .bar{width:72px}.docs .r{gap:8px}}
+
+/* Модули */
+.mods{display:grid;gap:10px}
+.mod{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.mod .sw{width:38px;height:22px;border-radius:999px;background:var(--surface-2);position:relative;margin-top:2px}
+.mod .sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.mod.on .sw{background:var(--green)}
+.mod.on .sw::after{left:19px}
+.mod.base .sw{background:var(--green);opacity:.55}
+.mod.base .sw::after{left:19px}
+.mod b{font-weight:600;display:block}
+.mod span{color:var(--muted);font-size:15px}
+.mod em{font-style:normal;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--green-ink);background:var(--green-soft);padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.mod.opt em{color:var(--muted);background:var(--surface-2)}
+
+/* Табличка */
+.tentwrap{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+@media (max-width:520px){.tentwrap{grid-template-columns:1fr}}
+.tent{width:200px;background:var(--tent);color:#f3ede0;border-radius:8px;padding:14px 14px 12px;display:grid;gap:8px;justify-items:center;text-align:center;box-shadow:var(--shadow);transform:rotate(-2deg);margin-inline:auto}
+.tent .name{font-family:Manrope,system-ui,sans-serif;font-weight:800;font-size:17px;justify-self:start;display:flex;justify-content:space-between;width:100%;align-items:center}
+.tent .name i{font-style:normal;font-family:"Golos Text",sans-serif;font-size:10px;background:var(--tent-gold);color:#1b1810;padding:2px 7px;border-radius:999px;font-weight:600}
+.tent .cta{color:var(--tent-gold);font-weight:600;font-size:13px;letter-spacing:.06em}
+.tent canvas{width:130px;height:130px;background:#fff;border-radius:6px;padding:6px;image-rendering:pixelated}
+.tent .s{font-size:9.5px;color:#b9b2a3;line-height:1.35}
+
+/* Цена */
+.price{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 20px;display:grid;gap:18px;box-shadow:var(--shadow)}
+.price .row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:12px}
+.price .row:last-of-type{border-bottom:0;padding-bottom:0}
+.price .n{font-family:Manrope,system-ui,sans-serif;font-size:26px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price .n small{font-family:"Golos Text",sans-serif;font-size:14px;color:var(--muted);font-weight:500}
+.price .d{color:var(--muted);font-size:15px;display:block}
+.ptable{gap:0;padding:14px 18px 16px}
+.ptable .ph,.ptable .pr{display:grid;grid-template-columns:1fr 92px 82px;gap:10px;align-items:center}
+.ptable .ph{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.ptable .ph span:not(:first-child),.ptable .pr .n{text-align:right}
+.ptable .pr{padding-block:12px;border-bottom:1px solid var(--line)}
+.ptable .pr:last-of-type{border-bottom:0}
+.ptable .n{font-size:20px}
+.ptable .pf{margin-top:12px;font-size:14px;color:var(--muted)}
+@media (max-width:440px){.ptable .ph,.ptable .pr{grid-template-columns:1fr 78px 70px}.ptable .n{font-size:17px}}
+.note{background:var(--gold-soft);border-radius:12px;padding:12px 14px;font-size:15px}
+.honest{border-left:3px solid var(--green);padding-left:14px;color:var(--muted);font-size:15.5px}
+
+/* Шаги */
+.steps{display:grid;gap:0;padding:0;margin:0;list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:14px;padding-block:12px;border-top:1px solid var(--line);counter-increment:s}
+.steps li:first-child{border-top:0;padding-top:0}
+.steps li::before{content:counter(s);font-family:Manrope,system-ui,sans-serif;font-weight:800;font-size:20px;color:var(--green);width:22px;line-height:1.3}
+.steps b{font-weight:600}
+.steps span{display:block;color:var(--muted);font-size:15.5px}
+
+/* Контакт */
+.contact{background:var(--green);color:#fff;border-radius:18px;padding:24px 22px;display:grid;gap:10px}
+.contact h2{color:#fff}
+.contact p{color:rgba(255,255,255,.85)}
+.contact a{color:#fff;font-weight:600;text-decoration:none;font-size:22px;font-family:Manrope,system-ui,sans-serif;font-weight:800}
+.contact a:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:4px}
+.contact .ways{font-size:14px;color:rgba(255,255,255,.75)}
+footer{margin-top:28px;font-size:13px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:no-preference){.tent{transition:transform .3s}.tent:hover{transform:rotate(0)}}
+/* Брендинг GMM Digital */
+.brand{display:inline-block;margin-bottom:26px}.brand img{height:28px;width:auto;display:block}
+.contact .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.contact .links a{font-family:"Golos Text",system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);text-decoration:none}
+.contact .links a:hover{background:rgba(255,255,255,.22)}
+.contact .links svg{width:18px;height:18px;fill:currentColor}
+.spots{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width:480px){.spots{grid-template-columns:1fr}}
+.spot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}
+.spot .em{font-size:24px;line-height:1}
+.spot b{font-weight:600;font-size:15.5px}
+.spot span{font-size:14px;color:var(--muted)}
+.pneutral{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 20px;display:grid;gap:8px;box-shadow:var(--shadow)}
+.pneutral b{font-family:Manrope,system-ui,sans-serif;font-size:21px;font-weight:800;line-height:1.2}
+.pneutral p{margin:0;color:var(--muted);font-size:15px}
+.eyebrow .omark{height:20px;width:auto;vertical-align:middle;margin:-3px 8px 0 0}
+.rate .omark-rate{height:36px;width:auto;margin:0 auto -14px}
+</style>
+
+</head><body><div class="wrap">
+
+<a class="brand" href="/" aria-label="GMM Digital — на главную"><picture><source srcset="/img/logo.svg" media="(prefers-color-scheme: dark)"><img src="/img/logo-dark.svg" alt="GMM Digital — цифровые услуги" width="217" height="60"></picture></a>
+
+  <header class="hero">
+    <p class="eyebrow"><svg class="omark" viewBox="0 0 100 100" aria-hidden="true"><path d="M30 6 H70 A24 24 0 0 1 94 30 V58 A24 24 0 0 1 70 82 H44 C36 82 26 88 14 97 C18 90 20 86 20 81 A24 24 0 0 1 6 58 V30 A24 24 0 0 1 30 6 Z" fill="currentColor"/><path d="M50.00 19.00 L56.17 35.51 L73.78 36.27 L59.99 47.24 L64.69 64.23 L50.00 54.50 L35.31 64.23 L40.01 47.24 L26.22 36.27 L43.83 35.51Z" fill="var(--bg)"/></svg>Отклик · для клиник и медцентров</p>
+    <h1>Довольные пациенты — в 2ГИС и Яндекс. Недовольные — вам лично, а не в интернет.</h1>
+    <p class="sub">QR в кабинете и на ресепшене. Пациент ставит оценку за 10 секунд — и дальше два разных пути.</p>
+  </header>
+
+  <section class="section">
+    <h2>Знакомая ситуация</h2>
+    <p class="lead">Пациент прождал приём сорок минут, врач торопился, на ресепшене насчитали больше, чем говорили по телефону. Вслух он не пожалуется — неловко, да и кому. Он просто не вернётся и не приведёт семью. А вечером напишет в 2ГИС — и этот отзыв прочитают все, кто выбирает, куда записаться.</p>
+    <div class="review" aria-label="Пример отзыва в 2ГИС">
+      <div class="who"><div class="ava">С</div><div><div>Саида М.</div><div class="stars">★★☆☆☆</div></div></div>
+      <p class="t">Записалась к неврологу на 10:00, зашла в 10:45. Приём семь минут, врач не отрывалась от компьютера. На ресепшене насчитали на 1 200 рублей больше, чем называли по телефону. Больше не пойду и никому не посоветую.</p>
+      <p class="when">2 дня назад · 2ГИС</p>
+    </div>
+    <p class="muted">Эта пациентка пришла бы ещё на УЗИ и привела бы маму. Один вопрос на выходе — и вы узнали бы про очередь и расхождение в цене в тот же день, пока могли позвонить и извиниться, а не из отзыва.</p>
+  </section>
+
+  <section class="section">
+    <h2>Как это работает</h2>
+    <div class="fork">
+      <div class="device" aria-label="Страница оценки на телефоне пациента">
+        <p class="cap">Пациент сканирует QR в кабинете или на ресепшене — и видит это</p>
+        <div class="dev"><div class="dev-in"><div class="rate">
+          <div class="dev-bar"><span>11:05</span><span class="isl"></span><span class="bat"><i></i></span></div>
+          <svg class="omark-rate" viewBox="0 0 100 100" aria-hidden="true"><path d="M30 6 H70 A24 24 0 0 1 94 30 V58 A24 24 0 0 1 70 82 H44 C36 82 26 88 14 97 C18 90 20 86 20 81 A24 24 0 0 1 6 58 V30 A24 24 0 0 1 30 6 Z" fill="#c9a55a"/><path d="M50.00 19.00 L56.17 35.51 L73.78 36.27 L59.99 47.24 L64.69 64.23 L50.00 54.50 L35.31 64.23 L40.01 47.24 L26.22 36.27 L43.83 35.51Z" fill="#0e0d0b"/></svg>
+          <div class="rb">Спасибо, что выбрали нас</div>
+          <div class="rn">Медея</div>
+          <div class="rs">Кабинет 7 · Невролог</div>
+          <div class="ra">Как прошёл приём?</div>
+          <div class="rstars"><svg viewBox="0 0 24 24"><path d="M12 2.8l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg></div>
+          <div class="rh">Нажмите на звезду</div>
+        </div></div></div>
+      </div>
+      <div class="arrows" aria-hidden="true">
+        <div><b>4–5 звёзд</b>↓</div>
+        <div><b>1–3 звезды</b>↓</div>
+      </div>
+      <div class="paths">
+        <div class="path good">
+          <span class="tag">Доволен</span>
+          <h3>Просим сказать это вслух</h3>
+          <p>Одна кнопка — и пациент уже на странице вашей клиники в 2ГИС (или Яндекс Картах). Пока впечатление свежее, а не через месяц.</p>
+          <span class="btn g">Оставить отзыв в 2ГИС</span>
+        </div>
+        <div class="path bad">
+          <span class="tag">Недоволен</span>
+          <h3>Слышите первым</h3>
+          <p>Пациент пишет, что не так. Сообщение уходит главврачу в Telegram сразу — с кабинетом и врачом. В интернет оно не попадает.</p>
+          <span class="btn tg">Отправить главврачу</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Что приходит вам в Telegram</h2>
+    <div class="device" aria-label="Пример уведомлений в Telegram">
+      <div class="dev"><div class="dev-in"><div class="tgs">
+        <div class="dev-bar"><span>11:05</span><span class="isl"></span><span class="bat"><i></i></span></div>
+        <div class="tg-head"><span class="back">‹</span><span class="av"><svg viewBox="0 0 136 136" aria-hidden="true"><rect width="136" height="136" fill="#0a2233"/><g transform="translate(18,18)"><path d="M30 6 H70 A24 24 0 0 1 94 30 V58 A24 24 0 0 1 70 82 H44 C36 82 26 88 14 97 C18 90 20 86 20 81 A24 24 0 0 1 6 58 V30 A24 24 0 0 1 30 6 Z" fill="#e8c37a"/><path d="M50.00 19.00 L56.17 35.51 L73.78 36.27 L59.99 47.24 L64.69 64.23 L50.00 54.50 L35.31 64.23 L40.01 47.24 L26.22 36.27 L43.83 35.51Z" fill="#0a2233"/></g></svg></span><div><div class="nm">Отклик</div><div class="st">бот</div></div></div>
+        <div class="tg-body">
+          <span class="tg-day">Пример</span>
+          <div class="tg-msg">⚠️ <b>Медея</b> — низкая оценка ★★☆☆☆
+Кабинет: 7 · Невролог: Алиева З.
+Администратор: Хадижат
+«Ждала 45 минут, приём семь минут. На ресепшене цена не та, что называли по телефону»
+📞 +7 9•• ••• •• •• — пациент не против звонка<span class="tm">11:05</span></div>
+          <div class="tg-msg"><b>Медея — итог дня</b>
+Оценок: <b>23</b>, средняя <b>4.7</b>
+5★ 17 · 4★ 4 · 3★ 1 · 2★ 1 · 1★ 0
+Довольных: 21, перешли в 2ГИС: <b>8</b>
+Низких: <b>2</b><span class="tm">20:00</span></div>
+        </div>
+        <div class="tg-input"><span class="pin"></span><span class="box">Сообщение</span></div>
+        <div class="tg-kb"><div><span>📊 Сегодня</span><span>📅 Вчера</span></div><div><span>📈 Неделя</span><span>🗓 Месяц</span></div></div>
+      </div></div></div>
+    </div>
+    <p class="muted">Пациентка с такой оценкой ещё не дошла до машины. Позвонить, извиниться, пересчитать, предложить приём без очереди — решаете вы. Отклик даёт вам этот час, за который двойка превращается в «спасибо, что перезвонили».</p>
+    <ul class="list">
+      <li><span class="ic">⚡</span><div><b>Каждая низкая оценка — сразу</b><span>кабинет, врач, администратор на смене, комментарий пациента, телефон, если он его оставил</span></div></li>
+      <li><span class="ic">🌙</span><div><b>Итог дня — в удобное вам время</b><span>вечером после последнего приёма или утром — как скажете: сколько оценок, средний балл, сколько пациентов перешли в 2ГИС и Яндекс</span></div></li>
+      <li><span class="ic">📈</span><div><b>Разбор недели по понедельникам</b><span>что повторяется — ожидание, цены, отношение, ресепшен, чистота; какие врачи и какие часы проседают; какая смена собирает жалобы</span></div></li>
+      <li><span class="ic">📊</span><div><b>Кнопки «Сегодня», «Вчера», «Неделя», «Месяц»</b><span>сводка в любой момент, без звонков на ресепшен</span></div></li>
+      <li><span class="ic">👥</span><div><b>Сколько угодно получателей</b><span>владелец, главврач, старший администратор, заведующие отделениями — каждый со своего телефона</span></div></li>
+    </ul>
+    <div class="docs" aria-label="Оценки по врачам · неделя · пример">
+      <div class="t">Оценки по врачам · неделя · пример</div>
+      <div class="r"><span>Исаева А. · терапевт</span><span class="bar"><i style="width:98%"></i></span><span class="n">4,9</span></div>
+      <div class="r"><span>Магомедов Р. · кардиолог</span><span class="bar"><i style="width:96%"></i></span><span class="n">4,8</span></div>
+      <div class="r"><span>Гаджиева П. · УЗИ</span><span class="bar"><i style="width:94%"></i></span><span class="n">4,7</span></div>
+      <div class="r low"><span>Алиева З. · невролог</span><span class="bar"><i style="width:78%"></i></span><span class="n">3,9</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Что можно настроить</h2>
+    <p class="muted">Базовые функции — всегда. Остальное включаем или выключаем по вашему желанию, в любой момент, без доплаты за само включение.</p>
+    <div class="mods">
+      <div class="mod base"><span class="sw" aria-hidden="true"></span><div><b>Оценка по QR и кнопка в 2ГИС / Яндекс Карты <em>базово</em></b><span>какие площадки показывать — выбираете вы</span></div></div>
+      <div class="mod base"><span class="sw" aria-hidden="true"></span><div><b>Низкие оценки в Telegram сразу, итог дня, разбор недели <em>базово</em></b><span>время итога дня — какое скажете: после последнего приёма, к пересменке, утром</span></div></div>
+      <div class="mod on"><span class="sw" aria-hidden="true"></span><div><b>Свой QR в каждом кабинете <em>рекомендуем</em></b><span>в сообщении видно, у какого врача была оценка и в какой кабинет идти. Без этого — одна общая оценка клиники</span></div></div>
+      <div class="mod on"><span class="sw" aria-hidden="true"></span><div><b>Рейтинг врачей и администраторов <em>рекомендуем</em></b><span>по кабинету и времени бот сам понимает, чей приём и чья смена; раз в неделю видно, после кого пациенты довольны, а после кого — жалобы</span></div></div>
+      <div class="mod on"><span class="sw" aria-hidden="true"></span><div><b>Два момента: после приёма и на выходе <em>рекомендуем</em></b><span>табличка в кабинете — про врача, пока пациент ещё у него; QR на ресепшене при оплате — про клинику в целом: ожидание, цены, администраторы. Довольного пациента ведём в 2ГИС</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Отдельный QR для лаборатории, УЗИ, процедурного <em>по желанию</em></b><span>оценка кабинета отдельно от врача — видно, что именно проседает: анализы, очередь на УЗИ или ресепшен</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Все оценки в Telegram, а не только низкие <em>по желанию</em></b><span>переключатель прямо в боте: хотите видеть каждую пятёрку — включаете</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Несколько получателей <em>по желанию</em></b><span>главврач, старший администратор, заведующие отделениями, владелец второго филиала — каждый подключается своим кодом</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Старший администратор получает уведомления первым <em>по желанию</em></b><span>решает на месте — пересчитать, извиниться, перезаписать без очереди; главврач вечером видит, что было и как решили</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Ответ пациенту из Telegram <em>по желанию</em></b><span>под низкой оценкой — кнопка «Ответить»: пациент получает ваше сообщение в WhatsApp</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Второй вопрос: «Порекомендуете нас близким?» <em>по желанию</em></b><span>показывает, приведёт ли пациент семью, а не только настроение после приёма</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Что понравилось, что нет <em>по желанию</em></b><span>ожидание, врач, объяснения, цены, ресепшен, чистота — пациент отмечает одним нажатием; разбор недели показывает, что именно проседает</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Ежемесячный отчёт в PDF <em>по желанию</em></b><span>динамика, врачи и кабинеты, смены администраторов, повторяющиеся жалобы — одна страница для планёрки</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Сравнение с соседями <em>по желанию</em></b><span>раз в неделю: ваш рейтинг в 2ГИС и Яндекс и у клиник рядом</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Анонимный режим <em>по желанию</em></b><span>без просьбы оставить телефон — в медицине это особенно важно: пациент охотнее пишет честно</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Новые публичные отзывы в Telegram с готовым ответом <em>отдельно</em></b><span>каждый отзыв из 2ГИС и Яндекса приходит сразу, с черновиком ответа — аккуратным, без медицинских подробностей; вы только нажимаете «опубликовать»</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Приглашения пациентам, которые ставили 5 звёзд <em>отдельно</em></b><span>перед сезоном или к дате: чек-ап, контрольный осмотр, прививки — тем, кому у вас уже понравилось</span></div></div>
+    </div>
+    <p class="muted">Нужно иначе — оценивать запись по телефону, задавать вопрос про конкретного врача по имени, получать сводку в другом виде? При необходимости можно доработать под ваш сценарий.</p>
+  </section>
+
+  <section class="section">
+    <h2>Где разместить QR</h2>
+    <p class="muted">У клиники два момента: в кабинете, когда пациент ещё у врача, — и ресепшен при оплате, когда он уже знает, как всё прошло, включая очередь и цену.</p>
+    <div class="spots">
+      <div class="spot"><span class="em">🩺</span><b>Табличка в кабинете</b><span>на столе врача — «как прошёл приём?»; у каждого кабинета свой QR</span></div>
+      <div class="spot"><span class="em">🧾</span><b>Ресепшен при оплате</b><span>табличка у терминала — главный момент для отзыва в 2ГИС</span></div>
+      <div class="spot"><span class="em">🧪</span><b>Лаборатория, УЗИ, процедурный</b><span>если хотите отдельно знать, как эти кабинеты</span></div>
+      <div class="spot"><span class="em">🪑</span><b>Зона ожидания</b><span>пока ждёт результаты или следующего врача — оценит, не торопясь</span></div>
+    </div>
+    <div class="tentwrap">
+      <div class="tent" aria-label="Образец таблички в кабинете">
+        <div class="name">Медея <i>Кабинет 7</i></div>
+        <div class="cta">КАК ПРОШЁЛ ПРИЁМ?</div>
+        <canvas id="qr" width="29" height="29" aria-hidden="true"></canvas>
+        <div class="s">Наведите камеру телефона — 10 секунд<br>Всё хорошо — расскажите в 2ГИС.<br>Что-то не так — напишите, разберёмся сегодня.</div>
+      </div>
+      <div style="display:grid;gap:10px">
+        <p>Табличка в каждый кабинет и на ресепшен — у каждой свой QR. Название, адрес и цвет — ваши, под стиль клиники.</p>
+        <p class="muted">Печать в любой типографии, пластик или плотная бумага — пара сотен рублей за комплект.</p>
+        <p class="muted">Администратору одна фраза при оплате: «Отсканируйте — если что-то не так, главврач увидит сегодня».</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Честно про отзывы</h2>
+    <p class="honest">Отзывы мы не пишем и не покупаем — 2ГИС и Яндекс за это блокируют карточки. Мы только просим довольных пациентов сказать вслух то, что они и так думают. Что пациент напишет в 2ГИС — мы не видим и не меняем. Плохие отзывы Отклик не отменяет — он даёт вам узнать о проблеме первым и решить её самим.</p>
+  </section>
+
+  <section class="section">
+    <h2>Сколько стоит</h2>
+    <div class="price">
+      <div class="row"><div><b>Подключение</b><span class="d">настройка клиники и каждого врача, страница оценки, таблички для кабинетов и ресепшена, подключение главврача, администраторов и врачей</span></div><div class="n">20 000 <small>₽</small></div></div>
+      <div class="row"><div><b>Обслуживание</b><span class="d">за одну клинику: сервер, уведомления, рейтинг врачей, недельные разборы, включение и выключение функций, любые правки</span></div><div class="n"><small>от</small> 2 000 <small>₽ / мес</small></div></div>
+    </div>
+    <p class="note">Обслуживание — от 2 000 ₽ в месяц за одну клинику. Если филиалов несколько или врачей больше, чем пять, — считаем отдельно: зависит от числа точек и получателей.</p>
+    <p class="note">Один пациент, который вернулся и привёл семью, — это больше, чем год обслуживания.</p>
+  </section>
+
+  <section class="section">
+    <h2>Запуск — один день</h2>
+    <ol class="steps">
+      <li><div><b>Вы говорите название, адрес, список врачей и кабинетов</b><span>и кто должен получать уведомления</span></div></li>
+      <li><div><b>Мы делаем страницу и таблички</b><span>в тот же день присылаем PDF для печати — на каждый кабинет и на ресепшен</span></div></li>
+      <li><div><b>Вы открываете бота и вводите код</b><span>две минуты, никаких установок и регистраций</span></div></li>
+      <li><div><b>Таблички в кабинеты — и работает</b><span>первые оценки приходят в тот же день</span></div></li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="contact">
+      <h2>Подключить «Отклик»</h2>
+      <p>Напишите или позвоните — отвечу, покажу на телефоне, как это выглядит у клиента и у вас.</p>
+      <a href="tel:+79387777440">+7 938 777-74-40</a>
+      <p class="ways">Магомедсалам · WhatsApp, Telegram, звонок</p>
+      <div class="links"><a href="https://wa.me/79387777440" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.4 1.5.5a3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>WhatsApp</a><a href="https://t.me/+79387777440" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21.9 4.4 18.7 19.6c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.5-.6-.2L6.2 13.3l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.4z"/></svg>Telegram</a><a href="tel:+79387777440">Позвонить</a><a href="https://instagram.com/gmm.digital" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.9-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM12 3.7c2.7 0 3 0 4.1.1 1 0 1.5.2 1.9.3.5.2.8.4 1.1.7.4.4.6.7.7 1.2.2.4.3.9.4 1.9 0 1 .1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.5-.4 1.9-.1.5-.4.8-.7 1.1-.3.4-.7.6-1.1.7-.4.2-.9.3-1.9.4-1.1 0-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.5-.2-1.9-.4-.5-.1-.8-.4-1.1-.7-.4-.3-.6-.7-.7-1.1-.2-.4-.3-.9-.4-1.9 0-1.1-.1-1.4-.1-4.1s0-3 .1-4.1c0-1 .2-1.5.4-1.9.1-.5.4-.8.7-1.2.3-.3.7-.5 1.1-.7.4-.1.9-.3 1.9-.3 1.1-.1 1.4-.1 4.1-.1zM12 2C9.3 2 8.9 2 7.9 2.1c-1.1 0-1.8.2-2.5.5-.7.2-1.2.6-1.8 1.1-.5.6-.9 1.1-1.1 1.8-.3.7-.5 1.4-.5 2.5C2 8.9 2 9.3 2 12s0 3.1.1 4.1c0 1.1.2 1.8.5 2.5.2.7.6 1.2 1.1 1.8.6.5 1.1.9 1.8 1.1.7.3 1.4.5 2.5.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1.1 0 1.8-.2 2.5-.5.7-.2 1.2-.6 1.8-1.1.5-.6.9-1.1 1.1-1.8.3-.7.5-1.4.5-2.5.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1c0-1.1-.2-1.8-.5-2.5-.2-.7-.6-1.2-1.1-1.8-.6-.5-1.1-.9-1.8-1.1-.7-.3-1.4-.5-2.5-.5C15.1 2 14.7 2 12 2z"/></svg>Instagram</a></div>
+    </div>
+  </section>
+
+  <footer>GMM Digital · Махачкала · 2026 · <a href="https://instagram.com/gmm.digital" target="_blank" rel="noopener" style="color:inherit">@gmm.digital</a></footer>
+</div>
+
+
+<script>
+(function(){
+  // Декоративный QR-узор для образца таблички (не настоящий код)
+  var c=document.getElementById("qr"),x=c.getContext("2d"),n=29,s=1;
+  function finder(px,py){
+    x.fillStyle="#111";x.fillRect(px,py,7,7);x.fillStyle="#fff";x.fillRect(px+1,py+1,5,5);x.fillStyle="#111";x.fillRect(px+2,py+2,3,3);
+  }
+  var seed=7;function r(){seed=(seed*16807)%2147483647;return seed/2147483647;}
+  x.fillStyle="#fff";x.fillRect(0,0,n,n);
+  x.fillStyle="#111";
+  for(var i=0;i<n;i++)for(var j=0;j<n;j++){
+    var inF=(i<8&&j<8)||(i<8&&j>n-9)||(i>n-9&&j<8);
+    if(!inF&&r()<0.45)x.fillRect(i*s,j*s,s,s);
+  }
+  finder(0,0);finder(n-7,0);finder(0,n-7);
+})();
+</script>
+</body></html>

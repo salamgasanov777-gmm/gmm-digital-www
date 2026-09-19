@@ -1,0 +1,417 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Отклик для магазина — GMM Digital</title>
+<meta name="description" content="Довольные покупатели — в 2ГИС. Недовольные — вам в Telegram, а не в интернет. QR у кассы и на накладной в каждом магазине. Покупатель ставит оценку за 10 секунд — и вы знаете, что происходит в каждой точке, не выезжая туда.">
+<link rel="canonical" href="https://gmm-digital.ru/magazin">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Отклик для магазина — GMM Digital">
+<meta property="og:description" content="Довольные покупатели — в 2ГИС. Недовольные — вам в Telegram, а не в интернет. QR у кассы и на накладной в каждом магазине. Покупатель ставит оценку за 10 секунд — и вы знаете, что происходит в каждой точке, не выезжая туда.">
+<meta property="og:image" content="https://gmm-digital.ru/img/og.jpg">
+<meta property="og:url" content="https://gmm-digital.ru/magazin">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts/unbounded.css"><link rel="stylesheet" href="/fonts/golos-text.css">
+<link rel="icon" href="/img/favicon.png" type="image/png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<style>
+:root{
+  --bg:#f1f1ee; --surface:#ffffff; --surface-2:#e5e6e2;
+  --ink:#1a1d22; --muted:#5c6168; --line:#d3d5d1;
+  --blue:#1d3f6e; --blue-soft:#dde5f1; --blue-ink:#173359;
+  --orange:#e0641c; --orange-soft:#fbe7d9;
+  --red:#b7442e; --red-soft:#f5e3de;
+  --tg:#2aabee;
+  --stick:#1d3f6e; --stick-accent:#f5a623;
+  --shadow:0 10px 30px rgba(26,29,34,.10);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111418; --surface:#1a1f26; --surface-2:#232a33;
+    --ink:#e9ebee; --muted:#9aa2ad; --line:#2e3640;
+    --blue:#7fa8e0; --blue-soft:#1b2c44; --blue-ink:#b9d0f0;
+    --orange:#f08a4a; --orange-soft:#3d2614;
+    --red:#e2705a; --red-soft:#3d221c;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111418; --surface:#1a1f26; --surface-2:#232a33;
+  --ink:#e9ebee; --muted:#9aa2ad; --line:#2e3640;
+  --blue:#7fa8e0; --blue-soft:#1b2c44; --blue-ink:#b9d0f0;
+  --orange:#f08a4a; --orange-soft:#3d2614;
+  --red:#e2705a; --red-soft:#3d221c;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding-block:28px 64px;padding-inline:20px}
+h1,h2,h3{font-family:Unbounded,"Golos Text",system-ui,sans-serif;line-height:1.18;margin:0;text-wrap:balance;font-weight:700}
+h1{font-size:clamp(24px,5.6vw,34px);letter-spacing:-.01em}
+h2{font-size:clamp(20px,4.6vw,25px)}
+h3{font-size:17px;font-weight:600;font-family:"Golos Text",system-ui,sans-serif}
+p{margin:0}
+.eyebrow{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--orange);font-weight:600}
+.section{display:grid;gap:16px;margin-top:52px}
+.lead{font-size:19px}
+.muted{color:var(--muted)}
+.hero{display:grid;gap:18px;padding-top:8px}
+.hero .sub{font-size:19px;color:var(--muted);max-width:34ch}
+
+.review{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:grid;gap:8px;font-size:15.5px;box-shadow:var(--shadow)}
+.review .who{display:flex;gap:10px;align-items:center}
+.review .ava{width:34px;height:34px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;font-weight:600;color:var(--muted);font-size:14px}
+.review .stars{color:var(--orange);letter-spacing:2px;font-size:14px}
+.review .when{font-size:13px;color:var(--muted)}
+
+.fork{display:grid;gap:14px}
+.phone{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 18px 20px;display:grid;gap:10px;box-shadow:var(--shadow);justify-items:center;text-align:center}
+.phone .cap{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.phone .q{font-family:Unbounded,sans-serif;font-size:19px;font-weight:600}
+.phone .big{font-size:34px;letter-spacing:6px;color:var(--orange);line-height:1;margin-block:2px 6px}
+.phone .hint{font-size:14px;color:var(--muted)}
+.arrows{display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:14px;color:var(--muted);text-align:center}
+.arrows b{display:block;font-weight:600;color:var(--ink)}
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.path{border-radius:16px;padding:16px;display:grid;gap:10px;align-content:start;border:1px solid var(--line);background:var(--surface)}
+.path .tag{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:999px;justify-self:start}
+.path.good .tag{background:var(--blue-soft);color:var(--blue-ink)}
+.path.bad .tag{background:var(--red-soft);color:var(--red)}
+.path p{font-size:15px;color:var(--muted)}
+.btn{display:inline-block;padding:9px 12px;border-radius:10px;font-size:14px;font-weight:600;text-align:center}
+.btn.g{background:var(--blue);color:#fff}
+.btn.tg{background:var(--tg);color:#fff}
+@media (max-width:440px){.paths{grid-template-columns:1fr}.arrows{grid-template-columns:1fr;gap:4px}}
+
+.tgmsg{background:var(--surface);border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:14px 16px;font-size:15.5px;line-height:1.45;display:grid;gap:4px;box-shadow:var(--shadow);max-width:440px}
+.tgmsg .from{font-size:13px;color:var(--tg);font-weight:600}
+.tgmsg .time{font-size:12px;color:var(--muted);justify-self:end}
+.tgmsg q{quotes:"«" "»"}
+
+.list{display:grid;gap:12px;padding:0;margin:0;list-style:none}
+.list li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.list .ic{width:32px;height:32px;border-radius:10px;background:var(--blue-soft);color:var(--blue-ink);display:grid;place-items:center;font-size:15px;margin-top:1px}
+.list b{font-weight:600}
+.list span{display:block;color:var(--muted);font-size:15.5px}
+
+/* Рейтинг магазинов */
+.docs{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:8px;box-shadow:var(--shadow);font-size:15px}
+.docs .t{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.docs .r{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;font-variant-numeric:tabular-nums}
+.docs .bar{height:6px;border-radius:3px;background:var(--surface-2);width:110px;position:relative;overflow:hidden}
+.docs .bar i{position:absolute;inset:0;background:var(--blue);border-radius:3px}
+.docs .n{font-weight:600;min-width:2.6em;text-align:right}
+.docs .low .bar i{background:var(--red)}
+.docs .r>span:first-child{min-width:0;overflow-wrap:anywhere}
+@media (max-width:380px){.docs .bar{width:72px}.docs .r{gap:8px}}
+
+/* Модули */
+.mods{display:grid;gap:10px}
+.mod{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.mod .sw{width:38px;height:22px;border-radius:999px;background:var(--surface-2);position:relative;margin-top:2px}
+.mod .sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.mod.on .sw{background:var(--blue)}
+.mod.on .sw::after{left:19px}
+.mod.base .sw{background:var(--blue);opacity:.55}
+.mod.base .sw::after{left:19px}
+.mod b{font-weight:600;display:block}
+.mod span{color:var(--muted);font-size:15px}
+.mod em{font-style:normal;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--blue-ink);background:var(--blue-soft);padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.mod.opt em{color:var(--muted);background:var(--surface-2)}
+
+/* Точки размещения QR */
+.spots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:480px){.spots{grid-template-columns:1fr}}
+.spot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:6px;align-content:start}
+.spot .em{font-size:24px;line-height:1}
+.spot b{font-weight:600;font-size:15.5px}
+.spot span{font-size:14px;color:var(--muted)}
+
+/* Наклейка у кассы */
+.stickwrap{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center}
+@media (max-width:520px){.stickwrap{grid-template-columns:1fr}}
+.stick{width:210px;background:var(--stick);color:#fff;border-radius:10px;padding:14px;display:grid;gap:8px;justify-items:center;text-align:center;box-shadow:var(--shadow);transform:rotate(-2deg);margin-inline:auto;border-top:6px solid var(--stick-accent)}
+.stick .name{font-family:Unbounded,sans-serif;font-weight:700;font-size:14px;width:100%;display:flex;justify-content:space-between;align-items:center;text-transform:uppercase;letter-spacing:.02em}
+.stick .name i{font-style:normal;font-family:"Golos Text",sans-serif;font-size:10px;background:var(--stick-accent);color:#1b1810;padding:2px 7px;border-radius:999px;font-weight:600;text-transform:none;letter-spacing:0}
+.stick .cta{color:var(--stick-accent);font-weight:600;font-size:13px;letter-spacing:.06em}
+.stick canvas{width:130px;height:130px;background:#fff;border-radius:6px;padding:6px;image-rendering:pixelated}
+.stores{list-style:none;padding:0;margin:0;display:grid;gap:4px;font-size:14px;color:var(--muted)}
+.stores li{padding-left:14px;position:relative}
+.stores li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.stick .s{font-size:9.5px;color:#c4cddb;line-height:1.35}
+
+.price{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 20px;display:grid;gap:18px;box-shadow:var(--shadow)}
+.price .row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:12px}
+.price .row:last-of-type{border-bottom:0;padding-bottom:0}
+@media (max-width:380px){.price .row{grid-template-columns:1fr;gap:4px}}
+.price .n{font-family:Unbounded,sans-serif;font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price .n small{font-family:"Golos Text",sans-serif;font-size:14px;color:var(--muted);font-weight:500}
+.price .d{color:var(--muted);font-size:15px;display:block}
+.note{background:var(--orange-soft);border-radius:12px;padding:12px 14px;font-size:15px}
+.honest{border-left:3px solid var(--blue);padding-left:14px;color:var(--muted);font-size:15.5px}
+
+.steps{display:grid;padding:0;margin:0;list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:14px;padding-block:12px;border-top:1px solid var(--line);counter-increment:s}
+.steps li:first-child{border-top:0;padding-top:0}
+.steps li::before{content:counter(s);font-family:Unbounded,sans-serif;font-weight:700;font-size:18px;color:var(--orange);width:24px;line-height:1.4}
+.steps b{font-weight:600}
+.steps span{display:block;color:var(--muted);font-size:15.5px}
+
+.contact{background:var(--blue);color:#fff;border-radius:18px;padding:24px 22px;display:grid;gap:10px}
+.contact h2{color:#fff}
+.contact p{color:rgba(255,255,255,.85)}
+.contact a{color:#fff;font-weight:700;text-decoration:none;font-size:20px;font-family:Unbounded,sans-serif}
+.contact a:focus-visible{outline:2px solid #fff;outline-offset:3px;border-radius:4px}
+.contact .ways{font-size:14px;color:rgba(255,255,255,.75)}
+footer{margin-top:28px;font-size:13px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:no-preference){.stick{transition:transform .3s}.stick:hover{transform:rotate(0)}}
+/* Брендинг GMM Digital */
+.brand{display:inline-block;margin-bottom:26px}.brand img{height:28px;width:auto;display:block}
+.contact .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.contact .links a{font-family:"Golos Text",system-ui,sans-serif;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);text-decoration:none}
+.contact .links a:hover{background:rgba(255,255,255,.22)}
+.contact .links svg{width:18px;height:18px;fill:currentColor}
+
+/* Макеты телефона — как в презентации для кафе */
+.device{display:grid;gap:14px;justify-items:center}
+.device .cap{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600;text-align:center}
+.rate{background:radial-gradient(60% 40% at 50% 0%,rgba(201,165,90,.14),transparent 70%),#0e0d0b;color:#f3ede0;text-align:center;padding:0 16px 40px;display:flex;flex-direction:column;justify-content:center}
+.tgs{background:#0e1621;color:#f2f5f8;font-size:13px;line-height:1.4;text-align:left;display:grid;grid-template-rows:auto auto 1fr auto auto}
+.device .cap{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600;text-align:center}
+.dev{width:min(270px,100%);background:#0a0a0a;border-radius:40px;padding:9px;box-shadow:var(--shadow),0 0 0 1px rgba(255,255,255,.08) inset}
+.dev-in{border-radius:32px;overflow:hidden;background:#000;display:grid;min-height:540px}
+.dev-bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:10px 22px 0;color:#fff;font-size:12.5px;font-weight:600}
+.dev-bar .isl{width:78px;height:22px;background:#000;border-radius:20px}
+.dev-bar .bat{justify-self:end;display:flex;align-items:center;gap:5px}
+.dev-bar .bat i{display:block;width:20px;height:10px;border:1.5px solid rgba(255,255,255,.7);border-radius:3px;position:relative}
+.dev-bar .bat i::after{content:"";position:absolute;inset:2px;right:4px;background:#fff;border-radius:1px}
+.rate .dev-bar{position:absolute;left:0;right:0;top:0}
+.rate{position:relative}
+.rate .dev-bar{padding-inline:14px}
+.rate .rb{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#c9a55a;margin:26px 0 6px}
+.rate .rn{font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
+.rate .rs{color:#a39b88;font-size:13px;margin:4px 0 28px}
+.rate .ra{font-size:18px;font-weight:600;margin-bottom:14px}
+.rate .rstars{display:flex;justify-content:center;gap:4px}
+.rate .rstars svg{width:42px;height:42px;fill:none;stroke:#c9a55a;stroke-width:1.4}
+.rate .rh{color:#a39b88;font-size:12px;margin-top:10px}
+.tgs .dev-bar{background:#17212b;padding-bottom:6px}
+.tg-head{display:flex;align-items:center;gap:10px;padding:4px 12px 10px;background:#17212b}
+.tg-head .back{color:#5eb5f7;font-size:24px;line-height:1;margin-top:-3px}
+.tg-head .av{width:34px;height:34px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#0a2233}.tg-head .av svg{width:34px;height:34px;display:block}
+.tg-head .nm{font-weight:600;font-size:14.5px;line-height:1.15}
+.tg-head .st{font-size:11.5px;color:#8b9aa8}
+.tg-body{padding:10px 10px 12px;display:grid;gap:8px;align-content:start;justify-items:start;background:#0e1621}
+.tg-day{justify-self:center;background:rgba(0,0,0,.35);color:#c5d0da;font-size:11px;padding:3px 9px;border-radius:999px}
+.tg-msg{background:#182533;border-radius:12px 12px 12px 3px;padding:6px 10px 5px;max-width:100%;white-space:pre-line;font-size:12.5px}
+.tg-msg b{font-weight:600}
+.tg-msg .tm{display:block;text-align:right;font-size:10.5px;color:#6d8199;margin-top:2px}
+.tg-input{display:flex;align-items:center;gap:10px;padding:7px 12px;background:#17212b;color:#6d8199;font-size:13px}
+.tg-input .pin{width:18px;height:18px;border:2px solid #6d8199;border-radius:6px;transform:rotate(45deg);opacity:.7}
+.tg-input .box{flex:1;background:#242f3d;border-radius:14px;padding:6px 12px}
+.tg-kb{background:#17212b;padding:2px 6px 10px;display:grid;gap:5px}
+.tg-kb div{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.tg-kb span{background:#2b3a4a;border-radius:8px;padding:9px 4px;text-align:center;font-size:12.5px;color:#fff;white-space:nowrap}
+.eyebrow .omark{height:20px;width:auto;vertical-align:middle;margin:-3px 8px 0 0}
+.rate .omark-rate{height:36px;width:auto;margin:0 auto -14px}
+</style>
+
+</head><body><div class="wrap">
+
+  <a class="brand" href="/" aria-label="GMM Digital — на главную"><picture><source srcset="/img/logo.svg" media="(prefers-color-scheme: dark)"><img src="/img/logo-dark.svg" alt="GMM Digital — цифровые услуги" width="217" height="60"></picture></a>
+
+  <header class="hero">
+    <p class="eyebrow"><svg class="omark" viewBox="0 0 100 100" aria-hidden="true"><path d="M30 6 H70 A24 24 0 0 1 94 30 V58 A24 24 0 0 1 70 82 H44 C36 82 26 88 14 97 C18 90 20 86 20 81 A24 24 0 0 1 6 58 V30 A24 24 0 0 1 30 6 Z" fill="currentColor"/><path d="M50.00 19.00 L56.17 35.51 L73.78 36.27 L59.99 47.24 L64.69 64.23 L50.00 54.50 L35.31 64.23 L40.01 47.24 L26.22 36.27 L43.83 35.51Z" fill="var(--bg)"/></svg>Отклик · для магазинов и сетей</p>
+    <h1>Довольные покупатели — в 2ГИС. Недовольные — вам в Telegram, а не в интернет.</h1>
+    <p class="sub">QR у кассы и на накладной в каждом магазине. Покупатель ставит оценку за 10 секунд — и вы знаете, что происходит в каждой точке, не выезжая туда.</p>
+  </header>
+
+  <section class="section">
+    <h2>Знакомая история</h2>
+    <p class="lead">Стройматериалы — покупка нервная: доставка, недовоз, грузчики, очередь на кассе. Довольные уходят молча. В 2ГИС пишут те, кого задело, — про конкретный магазин, а видит это вся сеть. Руководство узнаёт через неделю, когда уже ничего не поправить.</p>
+    <div class="review" aria-label="Пример отзыва в 2ГИС">
+      <div class="who"><div class="ava">Р</div><div><div>Рустам М.</div><div class="stars">★★☆☆☆</div></div></div>
+      <p>Заказали 40 мешков, привезли 36. Водитель сказал «сколько дали, столько привёз». В магазине ответили «разбирайтесь с доставкой». Больше туда ни ногой.</p>
+      <p class="when">2 недели назад · 2ГИС</p>
+    </div>
+    <p class="muted">Этот покупатель мог написать то же самое вам — в день покупки, пока проблема решалась одним звонком. Его просто никто не спросил.</p>
+  </section>
+
+  <section class="section">
+    <h2>Как это работает</h2>
+    <div class="fork">
+      <div class="device" aria-label="Страница оценки на телефоне покупателя">
+        <p class="cap">Покупатель сканирует QR</p>
+        <div class="dev"><div class="dev-in"><div class="rate">
+          <div class="dev-bar"><span>17:24</span><span class="isl"></span><span class="bat"><i></i></span></div>
+          <svg class="omark-rate" viewBox="0 0 100 100" aria-hidden="true"><path d="M30 6 H70 A24 24 0 0 1 94 30 V58 A24 24 0 0 1 70 82 H44 C36 82 26 88 14 97 C18 90 20 86 20 81 A24 24 0 0 1 6 58 V30 A24 24 0 0 1 30 6 Z" fill="#c9a55a"/><path d="M50.00 19.00 L56.17 35.51 L73.78 36.27 L59.99 47.24 L64.69 64.23 L50.00 54.50 L35.31 64.23 L40.01 47.24 L26.22 36.27 L43.83 35.51Z" fill="#0e0d0b"/></svg>
+          <div class="rb">Спасибо, что были у нас</div>
+          <div class="rn">СтройДвор</div>
+          <div class="rs">Северный · Промышленная, 4</div>
+          <div class="ra">Как прошла покупка?</div>
+          <div class="rstars"><svg viewBox="0 0 24 24"><path d="M12 2.8l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2.8l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg></div>
+          <div class="rh">Нажмите на звезду</div>
+        </div></div></div>
+      </div>
+      <div class="arrows" aria-hidden="true">
+        <div><b>4–5 звёзд</b>↓</div>
+        <div><b>1–3 звезды</b>↓</div>
+      </div>
+      <div class="paths">
+        <div class="path good">
+          <span class="tag">Довольный</span>
+          <h3>Просим сказать это вслух</h3>
+          <p>Одна кнопка — и покупатель уже на странице отзывов именно этого магазина в 2ГИС (или Яндекс Картах). Пока впечатление свежее.</p>
+          <span class="btn g">Оставить отзыв в 2ГИС</span>
+        </div>
+        <div class="path bad">
+          <span class="tag">Недовольный</span>
+          <h3>Слышите первым</h3>
+          <p>Покупатель пишет, что не так. Сообщение уходит вам в Telegram сразу — с названием магазина. В интернет оно не попадает.</p>
+          <span class="btn tg">Отправить руководству</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Что приходит вам в Telegram</h2>
+    <div class="device" aria-label="Пример уведомлений в Telegram">
+      <div class="dev"><div class="dev-in"><div class="tgs">
+        <div class="dev-bar"><span>17:24</span><span class="isl"></span><span class="bat"><i></i></span></div>
+        <div class="tg-head"><span class="back">‹</span><span class="av"><svg viewBox="0 0 136 136" aria-hidden="true"><rect width="136" height="136" fill="#0a2233"/><g transform="translate(18,18)"><path d="M30 6 H70 A24 24 0 0 1 94 30 V58 A24 24 0 0 1 70 82 H44 C36 82 26 88 14 97 C18 90 20 86 20 81 A24 24 0 0 1 6 58 V30 A24 24 0 0 1 30 6 Z" fill="#e8c37a"/><path d="M50.00 19.00 L56.17 35.51 L73.78 36.27 L59.99 47.24 L64.69 64.23 L50.00 54.50 L35.31 64.23 L40.01 47.24 L26.22 36.27 L43.83 35.51Z" fill="#0a2233"/></g></svg></span><div><div class="nm">Отклик</div><div class="st">бот</div></div></div>
+        <div class="tg-body">
+          <span class="tg-day">Сегодня</span>
+          <div class="tg-msg">⚠️ <b>СтройДвор — Северный</b> — низкая оценка ★★☆☆☆
+Магазин: Северный, Промышленная, 4
+«Оплатил доставку на сегодня, уже вечер — никто не звонит»
+📞 +7 9•• ••• •• •• — покупатель не против звонка<span class="tm">17:24</span></div>
+          <div class="tg-msg"><b>СтройДвор — итог дня</b>
+Оценок: <b>38</b>, средняя <b>4.5</b>
+5★ 24 · 4★ 8 · 3★ 3 · 2★ 2 · 1★ 1
+Довольных: 32, перешли в 2ГИС: <b>14</b>
+Низких: <b>6</b> — Северный 3, Восточный 2, Южный 1<span class="tm">20:00</span></div>
+        </div>
+        <div class="tg-input"><span class="pin"></span><span class="box">Сообщение</span></div>
+        <div class="tg-kb"><div><span>📊 Сегодня</span><span>📅 Вчера</span></div><div><span>📈 Неделя</span><span>🗓 Месяц</span></div></div>
+      </div></div></div>
+    </div>
+    <p class="muted">Это конкретный человек, у которого сегодня стройка стоит. Один звонок от руководителя — и вместо злого отзыва на всю сеть у вас постоянный клиент, который расскажет соседям.</p>
+    <ul class="list">
+      <li><span class="ic">⚡</span><div><b>Каждая низкая оценка — сразу</b><span>магазин, точка, комментарий покупателя, телефон, если он его оставил</span></div></li>
+      <li><span class="ic">🏬</span><div><b>Видно по каждому магазину</b><span>директор видит всю сеть, управляющий — только свой магазин</span></div></li>
+      <li><span class="ic">🌙</span><div><b>Итог дня в 19:00</b><span>сколько оценок, средний балл, сколько человек перешли в 2ГИС — по каждой точке, до конца рабочего дня</span></div></li>
+      <li><span class="ic">📈</span><div><b>Разбор недели по понедельникам</b><span>какие магазины проседают, что повторяется: доставка, касса, грузчики, наличие товара</span></div></li>
+      <li><span class="ic">📊</span><div><b>Кнопки «Сегодня», «Вчера», «Неделя», «Месяц»</b><span>сводка в любой момент, без звонков управляющим</span></div></li>
+    </ul>
+    <div class="docs" aria-label="Пример рейтинга магазинов за месяц">
+      <div class="t">Рейтинг магазинов · сентябрь · пример</div>
+      <div class="r"><span>Центральный, Ленина, 10</span><span class="bar"><i style="width:96%"></i></span><span class="n">4,8</span></div>
+      <div class="r"><span>На Мира, Мира, 25</span><span class="bar"><i style="width:94%"></i></span><span class="n">4,7</span></div>
+      <div class="r"><span>Восточный, Заводская, 3</span><span class="bar"><i style="width:90%"></i></span><span class="n">4,5</span></div>
+      <div class="r"><span>Южный, Садовая, 18</span><span class="bar"><i style="width:88%"></i></span><span class="n">4,4</span></div>
+      <div class="r low"><span>Северный, Промышленная, 4</span><span class="bar"><i style="width:72%"></i></span><span class="n">3,6</span></div>
+      <div class="r"><span class="muted">… и ещё 4 магазина</span><span></span><span></span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Что можно включить или убрать</h2>
+    <p class="muted">Базовые функции — всегда. Остальное включаем или выключаем по вашему желанию, в любой момент, без доплаты за само включение.</p>
+    <div class="mods">
+      <div class="mod base"><span class="sw" aria-hidden="true"></span><div><b>Оценка по QR и кнопка в 2ГИС / Яндекс Карты <em>базово</em></b><span>какие площадки показывать — выбираете вы; для каждого магазина — его собственная карточка</span></div></div>
+      <div class="mod base"><span class="sw" aria-hidden="true"></span><div><b>Низкие оценки в Telegram сразу, итог дня в 19:00, разбор недели <em>базово</em></b><span>время итога дня — какое скажете</span></div></div>
+      <div class="mod on"><span class="sw" aria-hidden="true"></span><div><b>Свой QR у каждого магазина <em>рекомендуем</em></b><span>вы знаете, откуда пришла оценка. Без этого — одна общая оценка сети</span></div></div>
+      <div class="mod on"><span class="sw" aria-hidden="true"></span><div><b>Директор видит всю сеть, управляющий — свой магазин <em>рекомендуем</em></b><span>у каждого управляющего свой код; он не видит другие точки</span></div></div>
+      <div class="mod on"><span class="sw" aria-hidden="true"></span><div><b>Очередь жалоб <em>рекомендуем</em></b><span>управляющий отмечает «разобрался» под каждой низкой оценкой. Не отметил за час — директору приходит «жалоба висит, Северный»</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Оценка по кассе или сотруднику <em>по желанию</em></b><span>«касса 2», «продавец Магомед» — видно, кто именно теряет покупателей</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Оценка доставки по накладной <em>по желанию</em></b><span>QR с номером заказа печатается на накладной; оценка привязана к поставке и водителю</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Ответ покупателю из Telegram <em>по желанию</em></b><span>под низкой оценкой — кнопка «Ответить»: покупатель получает ваше сообщение в WhatsApp</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Второй вопрос: «Порекомендуете нас?» <em>по желанию</em></b><span>показывает, вернётся ли покупатель за следующей партией, а не только настроение</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Ежемесячный отчёт в PDF по магазинам <em>по желанию</em></b><span>динамика, рейтинг точек, повторяющиеся жалобы — одна страница для планёрки</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Сравнение с конкурентами <em>по желанию</em></b><span>раз в неделю: ваш рейтинг в 2ГИС и у магазинов стройматериалов рядом с каждой точкой</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Анонимный режим <em>по желанию</em></b><span>без просьбы оставить телефон — оценок становится больше</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Новые публичные отзывы в Telegram с готовым ответом <em>отдельно</em></b><span>каждый отзыв из 2ГИС и Яндекса по любому магазину приходит сразу, с черновиком ответа — вы только нажимаете «опубликовать»</span></div></div>
+      <div class="mod opt"><span class="sw" aria-hidden="true"></span><div><b>Скидка за оценку и рассылки постоянным покупателям <em>отдельно</em></b><span>«спасибо, 3% на следующую покупку»; тем, кто ставил 5 звёзд, — сообщение о поступлении товара или акции</span></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Где стоит QR</h2>
+    <div class="spots">
+      <div class="spot"><span class="em">🧾</span><b>У кассы</b><span>наклейка или табличка — покупатель сканирует, пока ждёт чек</span></div>
+      <div class="spot"><span class="em">📄</span><b>На накладной</b><span>QR печатается на чеке или накладной — оценит дома, когда всё привезли</span></div>
+      <div class="spot"><span class="em">🚚</span><b>У водителя</b><span>карточка при доставке — оценка именно доставки и грузчиков</span></div>
+    </div>
+    <div class="stickwrap">
+      <div class="stick" aria-label="Образец наклейки у кассы">
+        <div class="name">СтройДвор <i>Мира, 25</i></div>
+        <div class="cta">ОЦЕНИТЕ ПОКУПКУ</div>
+        <canvas id="qr" width="29" height="29" aria-hidden="true"></canvas>
+        <div class="s">Наведите камеру телефона — 10 секунд<br>Всё хорошо — расскажите в 2ГИС.<br>Что-то не так — напишите нам, решим.</div>
+      </div>
+      <div style="display:grid;gap:10px">
+        <p>У каждого магазина свой QR — поэтому вы знаете, откуда пришла оценка. Название, адрес и цвета — ваши, в стиле вашей сети.</p>
+        <ul class="stores">
+          <li>Центральный, Ленина, 10</li><li>Южный, Садовая, 18</li><li>У рынка, Базарная, 7</li>
+          <li>Новый, Строителей, 12</li><li>На Мира, Мира, 25</li><li>Северный · Промышленная, 4</li>
+          <li>Восточный, Заводская, 3</li><li>Трасса, Объездная, 1</li><li>База, Складская, 2</li>
+        </ul>
+        <p class="muted">Печать в любой типографии: наклейки, таблички, домики на кассу. На все магазины — в пределах пары тысяч рублей.</p>
+        <p class="muted">Кассирам одна фраза при расчёте: «Оцените нас, пожалуйста, 10 секунд».</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Честно про отзывы</h2>
+    <p class="honest">Отзывы мы не пишем и не покупаем — 2ГИС и Яндекс за это блокируют карточки. Мы только просим довольных покупателей сказать вслух то, что они и так думают. Что покупатель напишет в 2ГИС — мы не видим и не меняем.</p>
+  </section>
+
+  <section class="section">
+    <h2>Сколько стоит</h2>
+    <div class="price">
+      <div class="row"><div><b>Подключение</b><span class="d">пример для сети из 9 магазинов: страницы оценки, свой QR и макеты наклеек для каждой точки, карточки 2ГИС, подключение руководства и управляющих</span></div><div class="n">60 000 <small>₽</small></div></div>
+      <div class="row"><div><b>Обслуживание</b><span class="d">сервер, уведомления, сводки по магазинам, недельные разборы, любые правки — 2 000 ₽ за магазин</span></div><div class="n">18 000 <small>₽ / мес</small></div></div>
+    </div>
+    <p class="note">18 000 ₽ в месяц на 9 магазинов (2 000 ₽ за точку) — меньше зарплаты одного стажёра. А закрывает контроль качества по всей сети: вы узнаёте о проблеме в дальнем магазине в тот же час, а не из отзыва через неделю.</p>
+  </section>
+
+  <section class="section">
+    <h2>Запуск — несколько дней</h2>
+    <ol class="steps">
+      <li><div><b>Вы говорите, кто получает уведомления</b><span>и кто в каждом магазине отвечает</span></div></li>
+      <li><div><b>Мы делаем страницы и макеты</b><span>для каждого магазина свой QR; присылаем PDF для печати</span></div></li>
+      <li><div><b>Руководство и управляющие открывают бота и вводят код</b><span>две минуты, никаких установок и регистраций</span></div></li>
+      <li><div><b>Наклейки на кассы — и работает</b><span>первые оценки приходят в тот же день</span></div></li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="contact">
+      <h2>Подключить</h2>
+      <p>Напишите или позвоните — покажу на телефоне, как это выглядит у покупателя и у вас, на примере одного магазина.</p>
+      <a href="tel:+79387777440">+7 938 777-74-40</a>
+      <p class="ways">Магомедсалам · WhatsApp, Telegram, звонок</p>
+      <div class="links"><a href="https://wa.me/79387777440" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c.6.3 1.1.4 1.5.5a3.6 3.6 0 0 0 1.6.1 2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3z"/></svg>WhatsApp</a><a href="https://t.me/+79387777440" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21.9 4.4 18.7 19.6c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.5-.6-.2L6.2 13.3l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.5 3c.9-.3 1.6.2 1.4 1.4z"/></svg>Telegram</a><a href="tel:+79387777440">Позвонить</a><a href="https://instagram.com/gmm.digital" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5.9-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM12 3.7c2.7 0 3 0 4.1.1 1 0 1.5.2 1.9.3.5.2.8.4 1.1.7.4.4.6.7.7 1.2.2.4.3.9.4 1.9 0 1 .1 1.4.1 4.1s0 3-.1 4.1c0 1-.2 1.5-.4 1.9-.1.5-.4.8-.7 1.1-.3.4-.7.6-1.1.7-.4.2-.9.3-1.9.4-1.1 0-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.5-.2-1.9-.4-.5-.1-.8-.4-1.1-.7-.4-.3-.6-.7-.7-1.1-.2-.4-.3-.9-.4-1.9 0-1.1-.1-1.4-.1-4.1s0-3 .1-4.1c0-1 .2-1.5.4-1.9.1-.5.4-.8.7-1.2.3-.3.7-.5 1.1-.7.4-.1.9-.3 1.9-.3 1.1-.1 1.4-.1 4.1-.1zM12 2C9.3 2 8.9 2 7.9 2.1c-1.1 0-1.8.2-2.5.5-.7.2-1.2.6-1.8 1.1-.5.6-.9 1.1-1.1 1.8-.3.7-.5 1.4-.5 2.5C2 8.9 2 9.3 2 12s0 3.1.1 4.1c0 1.1.2 1.8.5 2.5.2.7.6 1.2 1.1 1.8.6.5 1.1.9 1.8 1.1.7.3 1.4.5 2.5.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1.1 0 1.8-.2 2.5-.5.7-.2 1.2-.6 1.8-1.1.5-.6.9-1.1 1.1-1.8.3-.7.5-1.4.5-2.5.1-1 .1-1.4.1-4.1s0-3.1-.1-4.1c0-1.1-.2-1.8-.5-2.5-.2-.7-.6-1.2-1.1-1.8-.6-.5-1.1-.9-1.8-1.1-.7-.3-1.4-.5-2.5-.5C15.1 2 14.7 2 12 2z"/></svg>Instagram</a></div>
+    </div>
+  </section>
+
+  <footer>GMM Digital · Махачкала · 2026 · <a href="https://instagram.com/gmm.digital" target="_blank" rel="noopener" style="color:inherit">@gmm.digital</a></footer>
+</div>
+
+<script>
+(function(){
+  // Декоративный QR-узор для образца наклейки (не настоящий код)
+  var c=document.getElementById("qr"),x=c.getContext("2d"),n=29;
+  function finder(px,py){
+    x.fillStyle="#111";x.fillRect(px,py,7,7);x.fillStyle="#fff";x.fillRect(px+1,py+1,5,5);x.fillStyle="#111";x.fillRect(px+2,py+2,3,3);
+  }
+  var seed=11;function r(){seed=(seed*16807)%2147483647;return seed/2147483647;}
+  x.fillStyle="#fff";x.fillRect(0,0,n,n);
+  x.fillStyle="#111";
+  for(var i=0;i<n;i++)for(var j=0;j<n;j++){
+    var inF=(i<8&&j<8)||(i<8&&j>n-9)||(i>n-9&&j<8);
+    if(!inF&&r()<0.45)x.fillRect(i,j,1,1);
+  }
+  finder(0,0);finder(n-7,0);finder(0,n-7);
+})();
+</script>
+</body></html>
