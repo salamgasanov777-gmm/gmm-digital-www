@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gmm-digital.ru/sitemap.xml
